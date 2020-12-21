@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+}
+
+nav .nav-wrapper {
+  background-color: #373F47;
+  padding: 0px 30px;
+  border-bottom: solid 4px #E0FF00;
+}
+
+nav .nav-wrapper .brand-logo {
+  color: #E0FF00;
+}
+
+nav .nav-wrapper ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 35%;
+}
+
+nav .nav-wrapper ul li a:hover {
+  color: #E0FF00;
+}
+
+.sidenav {
+  background-color: #E0FF00;
+}
+/*# sourceMappingURL=NavBar.css.map */
