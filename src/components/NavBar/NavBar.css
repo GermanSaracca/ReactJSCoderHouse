@@ -16,13 +16,24 @@ nav .nav-wrapper .brand-logo {
   color: #E0FF00;
 }
 
+@media screen and (max-width: 520px) {
+  nav .nav-wrapper .brand-logo {
+    font-size: 18px;
+  }
+}
+
 nav .nav-wrapper ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  width: 35%;
+  width: 40%;
+  margin-right: 5vw;
+}
+
+nav .nav-wrapper ul li a {
+  font-size: 16px;
 }
 
 nav .nav-wrapper ul li a:hover {
@@ -31,5 +42,19 @@ nav .nav-wrapper ul li a:hover {
 
 .sidenav {
   background-color: #E0FF00;
+}
+
+.sidenav li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 20px;
+  height: 15vh;
 }
 /*# sourceMappingURL=NavBar.css.map */

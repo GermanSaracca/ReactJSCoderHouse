@@ -1,5 +1,5 @@
-@import './colors.scss';
-@import './fonts.scss';
+@import '../assets/styles/colors.scss';
+@import '../assets/styles/fonts.scss';
 
 *{
     padding: 0;
@@ -17,13 +17,20 @@ nav{
     
         .brand-logo {
             color: $Green;
+
+            @media screen and (max-width: 520px){
+                font-size: 18px;
+            }
         }
         ul{ 
             display: flex;
             justify-content: space-around;
-            width: 35%;
+            width: 40%;
+            margin-right: 5vw;
+
             li{ 
                 a{
+                    font-size: 16px;
                     &:hover {
                         color: $Green;
                     }
@@ -36,5 +43,15 @@ nav{
 
 .sidenav {
     background-color: $Green;
+
+    li{
+        a{  
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            height: 15vh;
+        }
+    }
 }
 
