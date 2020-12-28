@@ -10,18 +10,27 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #373F47;
-  height: 30vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-image: url("../assets/images/pexels-helena-lopes-3688759.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 90vh;
 }
 
 .list-container .greeting-title {
+  line-height: 15vh;
   color: #E0FF00;
-  margin: 0;
+  background-color: rgba(63, 62, 62, 0.679);
+  border-radius: 5px;
+  padding: 0px 30px;
 }
 /*# sourceMappingURL=ItemListContainer.css.map */

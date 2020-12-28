@@ -12,7 +12,7 @@ const App = () => {
     return(
         <>
             <NavBar />
-            <ItemListContainer greeting = "Bienvenido a Coder-Commerce !!"/>
+            <ItemListContainer greeting = "Bienvenido a Coder-Commerce "/>
         </>
     )
 }

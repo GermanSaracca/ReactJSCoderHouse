@@ -1,0 +1,22 @@
+import React, { useState } from "react";
+import "./style.css";
+
+export default function App() {
+  const [clicks, setClicks] = useState(0);
+  const [date, setDate] = useState("-");
+
+  const clickedFn = () => {
+    setClicks(clicks + 1);
+    setDate(new Date().toString());
+  };
+
+  return (
+    <div>
+      <h1>Hello StackBlitz!</h1>
+      <p>Start editing to see some magic happen :)</p>
+      <button onClick={clickedFn}>Click me </button>
+      <p> {clicks} </p>
+      <p> {date} </p>
+    </div>
+  );
+}

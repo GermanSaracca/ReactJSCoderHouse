@@ -10,13 +10,20 @@
 
 .list-container{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    background-color: $DarkGray;
-    height: 30vh;
+    flex-direction: column;
+    background-image: url('../assets/images/pexels-helena-lopes-3688759.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90vh;
 
     .greeting-title {
-        color: $Green;
-        margin: 0;
+        line-height: 15vh;
+        color: $Green; 
+        background-color: rgba(63, 62, 62, 0.679);
+        border-radius: 5px;
+        padding: 0px 30px;
     }
 }
