@@ -15,10 +15,10 @@
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #7A7A7A;
-  width: 200px;
+  width: 100%;
   height: auto;
   padding: 5px;
-  border-radius: 2px;
+  border-radius: 0px 0px 2px 2px;
 }
 
 .item-counter .counter-container {
@@ -40,16 +40,22 @@
 }
 
 .item-counter .counter-container .counter-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 2rem;
   height: 2rem;
   border: none;
   cursor: pointer;
   background-color: unset;
-}
-
-.item-counter .counter-container .counter-btn:hover {
-  background-color: #7a7a7a21;
-  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.467);
+          box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.467);
 }
 
 .item-counter .counter-container .counter-btn p {
@@ -59,6 +65,10 @@
 
 .item-counter .counter-container .counter-value {
   color: #ffffff;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .item-counter .btn {

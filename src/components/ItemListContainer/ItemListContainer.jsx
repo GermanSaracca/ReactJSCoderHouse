@@ -1,23 +1,14 @@
 import React from 'react'
-import { FaRegSmileWink } from "react-icons/fa"
-import ItemCount from '../ItemCount/ItemCount'
+
+import ItemList from '../ItemList/ItemList'
 import './ItemListContainer.css'
 
-const ItemListContainer = ({greeting}) => {
-
-    const onAdd = (counter)=> {
-
-        console.log(counter)
-    }
+const ItemListContainer = () => {
 
     return (
         <>
-            <div className="list-container">
-                <h1 className="greeting-title">{greeting}<FaRegSmileWink/></h1>
-
-                {/* Solo temporalmente incluyo el counter aca para probarlo */}
-                <ItemCount initial={1} stock={8} />
-
+            <div className="item-list-container">
+                <ItemList/>
             </div>
         </>
     )

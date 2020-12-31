@@ -9,23 +9,23 @@ const ItemCount = ({ initial, stock }) => {
 
     const [ counter, setCounter ] = useState(initial);
 
-    const addItem = () => { counter < stock ? setCounter(counter + 1) : setCounter(counter) };
+    const removeItem = () => setCounter(counter -1);
 
-    const removeItem = () => { counter > 1 ? setCounter(counter -1) : setCounter(initial) };
+    const addItem = () => setCounter(counter + 1);
 
     //Funcion que devuelve los Items cargados al carrito guardados en localstorage
-    let localCartItems = () => {
+    // let localCartItems = () => {
 
-        let cartItems;
+    //     let cartItems;
 
-        if(localStorage.getItem('cartItems') === null){
-            cartItems = [];
-        } else {
+    //     if(localStorage.getItem('cartItems') === null){
+    //         cartItems = [];
+    //     } else {
     
-            cartItems = JSON.parse(localStorage.getItem('cartItems'));
-        }
-        return cartItems;
-    }
+    //         cartItems = JSON.parse(localStorage.getItem('cartItems'));
+    //     }
+    //     return cartItems;
+    // }
 
     const addToCart = () => {
 
@@ -37,11 +37,12 @@ const ItemCount = ({ initial, stock }) => {
                 qty: counter,
             }
 
-            let items = localCartItems();
+            console.log(newItem)
+            // let items = localCartItems();
 
-            items.push( newItem )
+            // items.push( newItem )
 
-            localStorage.setItem('cartItems',JSON.stringify(items));
+            // localStorage.setItem('cartItems',JSON.stringify(items));
         }
     }
 
@@ -51,13 +52,13 @@ const ItemCount = ({ initial, stock }) => {
 
                 <div className="counter-container">
 
-                    <button onClick = { removeItem } className="counter-btn"><p>-</p></button>
+                    <button onClick = { removeItem } className="waves-effect waves-light btn counter-btn" disabled={ counter <= initial }><p>-</p></button>
                     <p className="counter-value" >{counter}</p>
-                    <button onClick = { addItem } className="counter-btn"><p>+</p></button>
-
+                    <button onClick = { addItem } className="waves-effect waves-light btn counter-btn" disabled={ counter >= stock }><p>+</p></button>
+                    
                 </div>
 
-              <button onClick={ addToCart } className="waves-effect btn">Agregar al carrito</button>
+                <button onClick={ addToCart } className="waves-effect btn">Agregar al carrito</button>
 
             </div>
         </>

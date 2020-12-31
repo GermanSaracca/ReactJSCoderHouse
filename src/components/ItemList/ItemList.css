@@ -1,0 +1,41 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+}
+
+.ItemList {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  grid-row-gap: 2vw;
+  grid-column-gap: 2vw;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  padding: 0px 3vw;
+}
+
+@media screen and (min-width: 540px) {
+  .ItemList {
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .ItemList {
+    -ms-grid-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto auto;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .ItemList {
+    -ms-grid-columns: auto auto auto auto auto;
+        grid-template-columns: auto auto auto auto auto;
+  }
+}
+/*# sourceMappingURL=ItemList.css.map */

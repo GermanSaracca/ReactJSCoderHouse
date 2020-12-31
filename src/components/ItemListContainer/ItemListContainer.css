@@ -6,12 +6,13 @@
   font-family: "Roboto Mono", monospace;
 }
 
-.list-container {
+.item-list-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -19,18 +20,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: url("../assets/images/pexels-helena-lopes-3688759.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 90vh;
-}
-
-.list-container .greeting-title {
-  line-height: 15vh;
-  color: #E0FF00;
-  background-color: rgba(63, 62, 62, 0.679);
-  border-radius: 5px;
-  padding: 0px 30px;
+  background-color: #7A7A7A;
+  min-height: 90vh;
+  padding-top: 5vh;
 }
 /*# sourceMappingURL=ItemListContainer.css.map */
