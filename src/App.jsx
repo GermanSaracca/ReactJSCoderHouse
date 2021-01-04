@@ -9,6 +9,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 //Componentes
 import NavBar from  './components/NavBar/NavBar.jsx';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.jsx';
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
         <>
             <NavBar />
             <ItemListContainer />
+            <ItemDetailContainer />
         </>
     )
 }
