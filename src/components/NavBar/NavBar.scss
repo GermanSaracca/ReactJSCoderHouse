@@ -10,11 +10,12 @@
 
 nav{
 
+
     .nav-wrapper {
         background-color: $DarkGray;
         padding: 0px 30px;
         border-bottom: solid 4px $Green;
-    
+
         .brand-logo {
             color: $Green;
 
@@ -29,14 +30,21 @@ nav{
             margin-right: 5vw;
 
             li{ 
-                a{
+                .navlink{
                     font-size: 16px;
                     &:hover {
                         color: $Green;
                     }
                 }
+                .active{
+                    color: $Green;
+                    background-color: rgba(0, 0, 0, 0.097);
+                }
+
             }
         }
+
+
 
     }
 }
@@ -45,13 +53,18 @@ nav{
     background-color: $Green;
 
     li{
-        a{  
+        .navlink{  
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 20px;
             height: 15vh;
         }
+        .active{
+            background-color: rgba(0, 0, 0, 0.097);
+        }
     }
 }
+
+
 

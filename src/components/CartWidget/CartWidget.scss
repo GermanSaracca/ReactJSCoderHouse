@@ -11,15 +11,18 @@
     right: 30px;
 
     .material-icons{
+        color: $Green;
         cursor: pointer;
         width: 45px;
         display: flex;
         justify-content: center;
         align-items: center;
-        transition:  .3s all;
+        transition: .1s all;
+        font-size: 30px;
+
         &:hover {
             background-color: rgba(0, 0, 0, 0.097);
-            color: $Green;
+            font-size: 34px;
         }
     }
 }

@@ -32,19 +32,24 @@ nav .nav-wrapper ul {
   margin-right: 5vw;
 }
 
-nav .nav-wrapper ul li a {
+nav .nav-wrapper ul li .navlink {
   font-size: 16px;
 }
 
-nav .nav-wrapper ul li a:hover {
+nav .nav-wrapper ul li .navlink:hover {
   color: #E0FF00;
+}
+
+nav .nav-wrapper ul li .active {
+  color: #E0FF00;
+  background-color: rgba(0, 0, 0, 0.097);
 }
 
 .sidenav {
   background-color: #E0FF00;
 }
 
-.sidenav li a {
+.sidenav li .navlink {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,5 +61,9 @@ nav .nav-wrapper ul li a:hover {
           align-items: center;
   font-size: 20px;
   height: 15vh;
+}
+
+.sidenav li .active {
+  background-color: rgba(0, 0, 0, 0.097);
 }
 /*# sourceMappingURL=NavBar.css.map */

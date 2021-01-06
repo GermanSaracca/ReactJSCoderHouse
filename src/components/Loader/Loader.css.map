@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,cAAc,CAAC;EACX,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,gBAAgB,ECJT,OAAO;CDejB;;AAdD,AAKI,cALU,CAKV,kBAAkB,CAAA;EACd,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,GAAG;EACR,IAAI,EAAE,GAAG;CAKZ;;AAbL,AASQ,cATM,CAKV,kBAAkB,CAId,cAAc,CAAA;EACV,YAAY,ECThB,OAAO,CDSkB,UAAU;CAClC",
+    "sources": [
+        "Loader.scss",
+        "../assets/styles/colors.scss"
+    ],
+    "names": [],
+    "file": "Loader.css"
+}
