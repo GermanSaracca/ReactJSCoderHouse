@@ -202,15 +202,16 @@ const ItemDetailContainer = () => {
     
                 flag ? resolve(products) : reject("fallo promesa");
     
-            }, 2500);
+            }, 1500);
         });
 
         itemPromise
         .then(items =>{
 
-            let filterItem = items.filter(i => i.id === parseInt(id) );
-  
-            setItem(filterItem)
+            let filterItem = items.filter(i => i.id === parseInt(id));
+
+            filterItem.length === 0 ? setItem("not exist") : setItem(filterItem);
+
         })
         .catch(e => console.log(e))
 
@@ -219,10 +220,7 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-            {
-                
-                <ItemDetail item={item} />
-            }
+            <ItemDetail item={item} /> 
         </>
     )
 }

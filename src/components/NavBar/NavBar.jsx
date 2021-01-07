@@ -18,7 +18,7 @@ const NavBar = () => {
                     <a href="/#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                     <ul className="right hide-on-med-and-down">
                         <li>
-                            <NavLink to="/category/computacion" className="navlink"> Computacion </NavLink>
+                            <NavLink to="/category/computacion" className="navlink"> Computación </NavLink>
                         </li>
                         <li>
                             <NavLink to="/category/gaming" className="navlink"> Gaming </NavLink>
@@ -34,7 +34,7 @@ const NavBar = () => {
             {/* Mismo menu pero cuando esta colapsado para mobile */}
             <ul className="sidenav" id="mobile-demo">
                 <li>
-                    <NavLink to="/" className="navlink"> Computacion </NavLink>
+                    <NavLink to="/" className="navlink"> Computación </NavLink>
                 </li>
                 <li>
                     <NavLink to="/micuenta" className="navlink"> Gaming </NavLink>

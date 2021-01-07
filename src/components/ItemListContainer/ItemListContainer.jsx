@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-
 import ItemList from '../ItemList/ItemList'
 import Loader from '../Loader/Loader';
 import './ItemListContainer.css'
@@ -116,15 +115,17 @@ const ItemListContainer = () => {
         .catch(e => console.log(e))
 
     },[])
-
+    
     
     if (list.length > 0){
 
         if(categoryId !== undefined){
             return(
+
                 <div className="item-list-container">  
                 {
                     <ItemList list={ list.filter(product => product.category === `${categoryId}`) } />
+
                 }  
                 </div>
             ) 

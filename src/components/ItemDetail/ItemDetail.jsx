@@ -2,12 +2,14 @@ import React from 'react'
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
 import Loader from '../Loader/Loader'
+import NotExists from '../NotExists/NotExists'
 
 
 const ItemDetail = ({item}) => {
 
-    // const { id, title, details, price, stock, pictureUrl } = item;
-    if(item.length > 0){
+    //Si el largo del item es distinto de 0 y a la vez es distinto de "not exist"( lo cual dice q el item no existe)
+    // entonces retorno el  componente con el detalle
+    if(item.length > 0 && item !== "not exist"){
         return (
 
             <div className="item-detail">
@@ -45,6 +47,10 @@ const ItemDetail = ({item}) => {
                 
             </div>
         ) 
+    }else if(item === "not exist"){
+        return(
+            <NotExists/>
+        )
     }else{
         return(
             <Loader/>
