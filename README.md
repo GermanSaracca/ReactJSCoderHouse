@@ -1,6 +1,7 @@
 <h1>Proyecto integrador E-Commerce - Curso de React JS de CoderHouse</h1>
 
-![caption](./React App - Google Chrome 2021-01-08 18-41-43.gif)
+![React App - Google Chrome 2021-01-08 18-41-43](https://user-images.githubusercontent.com/64560524/104069941-845cce00-51e4-11eb-8b65-b5e43196ad9b.gif)
+
 
 <h3>
 Proyecto en proceso. Hasta ahora se simularon todas las llamadas a una API a traves de promesas que devuelven arrays de productos hardcodeados.   
