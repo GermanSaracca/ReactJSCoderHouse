@@ -4,6 +4,7 @@
     width: 100%;
     height: 90vh;
     background-color: $DarkGray;
+    animation: bgChange 2s ease-in infinite;
 
     .preloader-wrapper{
         position: absolute;

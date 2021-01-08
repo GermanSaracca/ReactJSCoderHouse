@@ -1,8 +1,14 @@
+//Hooks
 import React, { useEffect, useState } from 'react'
+import {useParams} from 'react-router-dom'
+
+//Components
 import ItemList from '../ItemList/ItemList'
 import Loader from '../Loader/Loader';
+
+//Particular CSS
 import './ItemListContainer.css'
-import {useParams} from 'react-router-dom'
+
 
 const ItemListContainer = () => {
 
@@ -114,9 +120,8 @@ const ItemListContainer = () => {
         })
         .catch(e => console.log(e))
 
-    },[])
-    
-    
+    },[]);
+
     if (list.length > 0){
 
         if(categoryId !== undefined){
@@ -125,8 +130,8 @@ const ItemListContainer = () => {
                 <div className="item-list-container">  
                 {
                     <ItemList list={ list.filter(product => product.category === `${categoryId}`) } />
-
                 }  
+                
                 </div>
             ) 
         }else{

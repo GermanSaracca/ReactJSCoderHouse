@@ -1,0 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+}
+
+.Toastify__toast {
+  color: #ffffff;
+  background-color: #373F47;
+  border: solid 2px #7A7A7A;
+  border-radius: 5px;
+}
+
+.Toastify__toast .Toastify__close-button {
+  color: #E0FF00;
+  opacity: 1;
+}
+
+.Toastify__toast .Toastify__progress-bar--default {
+  background-image: none;
+  background-color: #E0FF00;
+}
+/*# sourceMappingURL=app.css.map */

@@ -1,5 +1,7 @@
 import React from 'react'
+//Icon Component
 import { BiCommentError } from 'react-icons/bi';
+//Particular Css
 import './NotExists.css'
 
 const NotExists = () => {

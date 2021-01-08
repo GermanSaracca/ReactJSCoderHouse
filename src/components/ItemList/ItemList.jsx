@@ -1,7 +1,10 @@
 import React from 'react'
-import Item from '../Item/Item'
-import './ItemList.css'
 
+//Components
+import Item from '../Item/Item'
+
+//Particular CSS
+import './ItemList.css'
 
 const ItemList = ({ list }) => {
 

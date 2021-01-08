@@ -1,22 +1,60 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+//Particular CSS
 import './ItemDetail.css'
+
+//Components
 import ItemCount from '../ItemCount/ItemCount'
 import Loader from '../Loader/Loader'
 import NotExists from '../NotExists/NotExists'
 
 
+
 const ItemDetail = ({item}) => {
+
+
+    const [ bigImg, setBigImg ] = useState('');
+
 
     //Si el largo del item es distinto de 0 y a la vez es distinto de "not exist"( lo cual dice q el item no existe)
     // entonces retorno el  componente con el detalle
     if(item.length > 0 && item !== "not exist"){
-        return (
 
+        return (
             <div className="item-detail">
-    
                 <div className="left-container">
                     <div className="img-counter-container">
-                        <img  src={item[0].pictureUrl} alt={item[0].title} />
+                        <div className="small-images-big-image-container">
+                            <div className="small-images">
+                                <div className="sm-img" 
+                                    style={{ 
+                                        backgroundImage: `url(${item[0].pictureUrl[0]})` 
+                                    }}
+                                    onClick={ () => setBigImg({backgroundImage: `url(${item[0].pictureUrl[0] })`})}
+                                >
+                                </div>
+                                <div className="sm-img" 
+                                    style={{
+                                        backgroundImage: `url(${ item[0].pictureUrl[1] !== undefined ? item[0].pictureUrl[1] : item[0].pictureUrl[0] })` 
+                                    }}
+                                    onClick={ () => setBigImg({backgroundImage: `url(${item[0].pictureUrl[1] !== undefined ? item[0].pictureUrl[1] : item[0].pictureUrl[0] })`})}
+                                >
+                                </div>
+                                <div className="sm-img" 
+                                    style={{
+                                        backgroundImage: `url(${item[0].pictureUrl[2] !== undefined ? item[0].pictureUrl[2] : item[0].pictureUrl[0] })`,
+                                    }}
+                                    onClick={ () =>{
+                                        setBigImg({backgroundImage: `url(${item[0].pictureUrl[2] !== undefined ? item[0].pictureUrl[2] : item[0].pictureUrl[0] })`});
+                                    }}
+                                >
+                                </div>
+                            </div>
+                            <div className="big-image" 
+                                style={bigImg !== '' ? bigImg : { backgroundImage: `url(${item[0]?.pictureUrl[0] })`} }
+                                >        
+                            </div>
+                        </div>
                         <ItemCount initial={1} stock={item[0].stock}/>
                     </div>
                 </div>
@@ -44,7 +82,6 @@ const ItemDetail = ({item}) => {
                     
                     
                 </div>
-                
             </div>
         ) 
     }else if(item === "not exist"){

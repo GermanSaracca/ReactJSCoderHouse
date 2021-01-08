@@ -1,5 +1,7 @@
 <h1>Proyecto integrador E-Commerce - Curso de React JS de CoderHouse</h1>
 
+![](D:\Users\Ger\Desktop\CoderHouse_REACT\demo\React App - Google Chrome 2021-01-08 18-41-43.gif)
+
 <h3>
 Proyecto en proceso. Hasta ahora se simularon todas las llamadas a una API a traves de promesas que devuelven arrays de productos hardcodeados.   
 <br>

@@ -1,5 +1,9 @@
 import React, { useEffect, useState} from 'react'
+
+//Components
 import ItemDetail from '../ItemDetail/ItemDetail';
+
+//Hooks
 import {useParams} from 'react-router-dom'
 
 const ItemDetailContainer = () => {
@@ -9,6 +13,9 @@ const ItemDetailContainer = () => {
     const {id} = useParams();
 
     useEffect(() => {
+
+        //isMounted variable para evitar error de memoryLeaks
+        let isMounted = true;
 
         const itemPromise = new Promise((resolve,reject)=>{
 
@@ -33,7 +40,11 @@ const ItemDetailContainer = () => {
                         },
                         price: 50999,
                         stock: 9,
-                        pictureUrl: 'https://images.bidcom.com.ar/resize?src=https://www.bidcom.com.ar/publicacionesML/productos/NOT00057/1000x1000-NOT00057.jpg&h=220'
+                        pictureUrl: [
+                            'https://images.bidcom.com.ar/resize?src=https://www.bidcom.com.ar/publicacionesML/productos/NOT00057/1000x1000-NOT00057.jpg&h=220',
+                            'https://images.bidcom.com.ar/resize?src=https://www.bidcom.com.ar/publicacionesML/productos/NOT00175/1200x900-NOT00175-2.jpg&w=500&q=100',
+                            'https://images.bidcom.com.ar/resize?src=https://www.bidcom.com.ar/publicacionesML/productos/NOT00175/1200x900-NOT00175-4.jpg&w=500&q=100'
+                        ]
     
                     },
                     {
@@ -52,7 +63,11 @@ const ItemDetailContainer = () => {
                         },
                         price: 34999,
                         stock: 7,
-                        pictureUrl: 'https://images.bidcom.com.ar/resize?src=https://www.bidcom.com.ar/publicacionesML/productos/NOT00165/1000x1000-NOT00165.jpg&h=220'
+                        pictureUrl:[
+                            'https://images.bidcom.com.ar/resize?src=https://www.bidcom.com.ar/publicacionesML/productos/NOT00165/1000x1000-NOT00165.jpg&h=220',
+                            'https://images.bidcom.com.ar/resize?src=https://www.bidcom.com.ar/publicacionesML/productos/NOT000A3/1000x1000-NOT000A3-2.jpg&w=500&q=100',
+                            'https://images.bidcom.com.ar/resize?src=https://www.bidcom.com.ar/publicacionesML/productos/NOT000A3/1000x1000-NOT000A3-1.jpg&w=500&q=100'
+                        ] 
                     },
                     {
                         id: 3,
@@ -70,7 +85,10 @@ const ItemDetailContainer = () => {
                         },
                         price: 53999,
                         stock: 7,
-                        pictureUrl: 'https://images.bidcom.com.ar/resize?src=https://www.bidcom.com.ar/publicacionesML/productos/NOT00175/1000x1000-NOT00175.jpg&h=220'
+                        pictureUrl: [
+                            'https://images.bidcom.com.ar/resize?src=https://www.bidcom.com.ar/publicacionesML/productos/NOT00175/1000x1000-NOT00175.jpg&h=220',
+                            'https://images.bidcom.com.ar/resize?src=https://www.bidcom.com.ar/publicacionesML/productos/KNOT057F/1000x1000-KNOT057F.jpg&w=500&q=100'
+                        ] 
                     },
                     {
                         id: 4,
@@ -88,7 +106,11 @@ const ItemDetailContainer = () => {
                         },
                         price: 67999,
                         stock: 15,
-                        pictureUrl: 'https://images.bidcom.com.ar/resize?src=https://www.bidcom.com.ar/publicacionesML/productos/NOT00156/1000x1000-NOT00156.jpg&h=220'
+                        pictureUrl: [
+                            'https://images.bidcom.com.ar/resize?src=https://www.bidcom.com.ar/publicacionesML/productos/NOT00156/1000x1000-NOT00156.jpg&h=220',
+                            'https://images.bidcom.com.ar/resize?src=https://www.bidcom.com.ar/publicacionesML/productos/NOT00132/1200x900-NOT00132-1.jpg&w=500&q=100',
+                            'https://images.bidcom.com.ar/resize?src=https://www.bidcom.com.ar/publicacionesML/productos/NOT00132/1200x900-NOT00132-5.jpg&w=500&q=100'
+                        ] 
                     },
                     {
                         id: 5,
@@ -106,7 +128,11 @@ const ItemDetailContainer = () => {
                         },
                         price: 128999,
                         stock: 4,
-                        pictureUrl: 'https://images.bidcom.com.ar/resize?src=https://www.bidcom.com.ar/publicacionesML/productos/NOT00172/1000x1000-NOT00172.jpg&w=500&q=100'
+                        pictureUrl: [
+                            'https://images.bidcom.com.ar/resize?src=https://www.bidcom.com.ar/publicacionesML/productos/NOT00172/1000x1000-NOT00172.jpg&w=500&q=100',
+                            'https://images.bidcom.com.ar/resize?src=https://www.bidcom.com.ar/publicacionesML/productos/NOT00172/1200x900-NOT00172-1.jpg&w=500&q=100',
+                            'https://images.bidcom.com.ar/resize?src=https://www.bidcom.com.ar/publicacionesML/productos/NOT00172/1200x900-NOT00172-4.jpg&w=500&q=100'
+                        ] 
                     },
                     {
                         id: 6,
@@ -124,7 +150,10 @@ const ItemDetailContainer = () => {
                         },
                         price: 55000,
                         stock: 12,
-                        pictureUrl: 'https://http2.mlstatic.com/D_NQ_NP_649508-MLA31018432220_062019-O.webp'
+                        pictureUrl: [
+                            'https://http2.mlstatic.com/D_NQ_NP_649508-MLA31018432220_062019-O.webp',
+                            'https://http2.mlstatic.com/D_NQ_NP_777734-MLA32731813774_112019-O.webp'
+                        ]
                     },
                     {
                         id:7,
@@ -142,7 +171,10 @@ const ItemDetailContainer = () => {
                         },
                         price: 155000,
                         stock: 7,
-                        pictureUrl: 'https://http2.mlstatic.com/D_NQ_NP_818287-MLA44462133540_122020-O.webp'
+                        pictureUrl: [
+                            'https://http2.mlstatic.com/D_NQ_NP_818287-MLA44462133540_122020-O.webp',
+                            'https://http2.mlstatic.com/D_NQ_NP_894967-MLA44481812766_012021-O.webp'
+                        ] 
                     },
                     {
                         id:8,
@@ -160,7 +192,11 @@ const ItemDetailContainer = () => {
                         },
                         price: 27500,
                         stock: 15,
-                        pictureUrl: 'https://http2.mlstatic.com/D_NQ_NP_991801-MLA44330912940_122020-O.webp'
+                        pictureUrl: [
+                            'https://http2.mlstatic.com/D_NQ_NP_991801-MLA44330912940_122020-O.webp',
+                            'https://http2.mlstatic.com/D_NQ_NP_735394-MLA44170549482_112020-O.webp',
+                            'https://http2.mlstatic.com/D_NQ_NP_731754-MLA44170554226_112020-O.webp'
+                        ] 
                     },
                     {
                         id:9,
@@ -178,7 +214,9 @@ const ItemDetailContainer = () => {
                         },
                         price: 12500,
                         stock: 12,
-                        pictureUrl: 'https://http2.mlstatic.com/D_NQ_NP_898103-MLA32556737376_102019-O.webp'
+                        pictureUrl: [
+                            'https://http2.mlstatic.com/D_NQ_NP_898103-MLA32556737376_102019-O.webp'
+                        ] 
                     },
                     {
                         id:10,
@@ -196,7 +234,9 @@ const ItemDetailContainer = () => {
                         },
                         price: 24000,
                         stock: 20,
-                        pictureUrl: 'https://http2.mlstatic.com/D_NQ_NP_761792-MLA43730061265_102020-O.webp'
+                        pictureUrl:[
+                            'https://http2.mlstatic.com/D_NQ_NP_761792-MLA43730061265_102020-O.webp'
+                        ] 
                     },
                 ];
     
@@ -208,14 +248,20 @@ const ItemDetailContainer = () => {
         itemPromise
         .then(items =>{
 
-            let filterItem = items.filter(i => i.id === parseInt(id));
+            if (isMounted){
 
-            filterItem.length === 0 ? setItem("not exist") : setItem(filterItem);
+                let filterItem = items.filter(i => i.id === parseInt(id));
 
+                filterItem.length === 0 ? setItem("not exist") : setItem(filterItem);
+            }
         })
         .catch(e => console.log(e))
 
-    }, []);
+        return ()=> {
+            isMounted = false;
+        }
+
+    }, [id]);
 
 
     return (

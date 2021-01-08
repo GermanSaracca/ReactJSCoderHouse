@@ -1,7 +1,8 @@
 import React from 'react';
-//Carrito
+//Components
 import CartWidget from "../CartWidget/CartWidget"
-import './NavBar.css';//Archivo CSS propio
+//Particular Css
+import './NavBar.css';
 
 import {NavLink} from 'react-router-dom'
 
