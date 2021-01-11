@@ -14,6 +14,8 @@ const ItemDetail = ({item}) => {
 
 
     const [ bigImg, setBigImg ] = useState('');
+    const [ add, setAdd ] = useState();
+
 
 
     //Si el largo del item es distinto de 0 y a la vez es distinto de "not exist"( lo cual dice q el item no existe)
@@ -55,7 +57,7 @@ const ItemDetail = ({item}) => {
                                 >        
                             </div>
                         </div>
-                        <ItemCount initial={1} stock={item[0].stock}/>
+                        <ItemCount add={add} setAdd={setAdd} initial={1} stock={item[0].stock}/>
                     </div>
                 </div>
                 <div className="right-container">
@@ -84,6 +86,7 @@ const ItemDetail = ({item}) => {
                 </div>
             </div>
         ) 
+        
     }else if(item === "not exist"){
         return(
             <NotExists/>

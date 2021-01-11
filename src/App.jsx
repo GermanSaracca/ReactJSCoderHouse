@@ -47,7 +47,7 @@ const App = () => {
             <NavBar />
             <Switch>
                 <Route path="/" exact component={ItemListContainer}/>
-                <Route path="/category/:categoryId" component={ItemListContainer}/>
+                <Route path="/categories/:categoryId" component={ItemListContainer}/>
                 <Route path="/item/:id" component={ItemDetailContainer}/>
             </Switch>
         </Router>

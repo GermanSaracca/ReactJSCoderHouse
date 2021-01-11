@@ -2,7 +2,7 @@ import React from 'react'
 
 //Particular CSS
 import './Item.css'
-
+//Routing
 import { Link } from 'react-router-dom'
 
 const Item = ({ id, title, price, pictureUrl }) => {

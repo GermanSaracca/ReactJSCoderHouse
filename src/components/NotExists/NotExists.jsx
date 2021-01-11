@@ -9,7 +9,7 @@ const NotExists = () => {
         <>
             <div className="not-exist-item">
                 <BiCommentError className="coment-error"/>
-                <h4>Ooops!!! La página que estas buscando no existe.</h4>
+                <h4>Ooops!!! La página o producto <br/> que estas buscando no existe.</h4>
             </div>
         </>
     )

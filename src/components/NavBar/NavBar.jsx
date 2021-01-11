@@ -3,12 +3,11 @@ import React from 'react';
 import CartWidget from "../CartWidget/CartWidget"
 //Particular Css
 import './NavBar.css';
-
+//Routing
 import {NavLink} from 'react-router-dom'
 
 
 const NavBar = () => {
-
 
     return (
         <>  
@@ -19,10 +18,10 @@ const NavBar = () => {
                     <a href="/#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
                     <ul className="right hide-on-med-and-down">
                         <li>
-                            <NavLink to="/category/computacion" className="navlink"> Computación </NavLink>
+                            <NavLink to="/categories/computacion" className="navlink"> Computación </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/category/gaming" className="navlink"> Gaming </NavLink>
+                            <NavLink to="/categories/gaming" className="navlink"> Gaming </NavLink>
                         </li>
                         <li>
                             <NavLink to="/nosotros" className="navlink"> Nosotros </NavLink>

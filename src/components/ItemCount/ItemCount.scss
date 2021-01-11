@@ -58,3 +58,36 @@
         background-color: $Green;
     }
 }
+
+//Estilado para cuando aparece el boton de terminar compra
+.go-cart {
+    background-color: $Gray;
+    padding: 5px;
+
+    .btn {
+        color: $DarkGray;
+        font-weight: 600;
+        background-color: $Green;
+        width: 100%;
+        height: 70px;
+        animation: appear .7s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            font-size: 18px;
+        }
+
+        .cart {
+            margin-left: 2%;
+        }
+    }
+    @keyframes appear {
+        from{
+            opacity: 0;
+        }to{
+            opacity: 1;
+        }
+    }
+}
