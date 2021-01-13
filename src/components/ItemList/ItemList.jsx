@@ -10,7 +10,15 @@ const ItemList = ({ list }) => {
 
     return (
         <div className="ItemList">
-            { list.map( p => <Item key={p.id} id={p.id} title={p.title} price={p.price} stock={p.stock} pictureUrl={p.pictureUrl}  />) }
+            { list.map( p =>
+                <Item
+                key={p.id}
+                id={p.id} 
+                title={p.title} 
+                price={p.price} 
+                stock={p.stock} 
+                pictureUrl={p.pictureUrl}  
+                />) }
         </div>
     )
 }

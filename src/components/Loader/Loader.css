@@ -1,15 +1,16 @@
 .loader-screen {
-  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
   height: 90vh;
   background-color: #373F47;
-  -webkit-animation: bgChange 2s ease-in infinite;
-          animation: bgChange 2s ease-in infinite;
-}
-
-.loader-screen .preloader-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
 }
 
 .loader-screen .preloader-wrapper .spinner-layer {

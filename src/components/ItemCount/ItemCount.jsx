@@ -1,11 +1,29 @@
-import React, { useState } from 'react'
+import React,{useContext,useState, useEffect}from 'react'
 //Routing
 import { Link } from 'react-router-dom'
+//Context
+import {CartContext} from '../../context/cartContext';
 
 //Particular CSS
 import './ItemCount.css'
 
-const ItemCount = ({ add, setAdd, initial, stock }) => {
+const ItemCount = ({ isAdded, setIsAdded, initial, stock, item }) => {
+
+
+    const contextCart = useContext(CartContext);
+    const [ addToCart, isInCart ] = contextCart;
+
+    //Utlizo un useEffect para una vez renderizado el componente principal chequear si el producto ya esta en el carrito
+    //Si ya lo esta entonces quito el boton de AGREGAR AL CARRITO por el de TERMINAR COMPRA
+    //Aun por mas que el cartContext ya no permita duplicados.
+    useEffect(() => {
+
+        const isIn = isInCart(item[0].title);
+
+        isIn && setIsAdded(true);
+
+    })
+
 
     // En caso que no haya stock cambio el valor inicial por "Sin stock"
     if(stock === 0){ initial = "Sin stock"}
@@ -15,13 +33,9 @@ const ItemCount = ({ add, setAdd, initial, stock }) => {
     const removeItem = () => setCounter(counter -1);
     const addItem = () => setCounter(counter + 1);
 
-    const onAdd = () => {
-        setAdd(counter)
-    }
 
-    console.log(add)
-    //Si ya se presiono el boton de "AGREGAR AL CARRITO" por lo tanto el state add ya es distinto de undefined
-    if ( add === undefined ){
+    //Si ya se presiono el boton de "AGREGAR AL CARRITO" el state isAdded va a ser true
+    if ( isAdded === false ){
         
         return (
             <>  
@@ -35,18 +49,27 @@ const ItemCount = ({ add, setAdd, initial, stock }) => {
                         
                     </div>
     
-                    <button onClick={ onAdd } className="waves-effect btn">Agregar al carrito</button>
+                    <button 
+                        onClick={ ()=>{
+                            addToCart({item:item[0].title, quantity: counter, price: item[0].price});
+                            setIsAdded(true);
+                        }}
+                        className="waves-effect btn">
+                        Agregar al carrito
+                    </button>
                 </div>
             </>
         )
 
-    } else {
+    } else if ( isAdded === true  ) {
 
         return(
             <>  
             <div className="go-cart">
-                <Link to="/cart" className="waves-effect btn">
-                    Terminar compra<i className="material-icons cart">shopping_cart</i>
+                <Link to="/cart" 
+                    className="waves-effect btn">
+                    Terminar compra
+                    <i className="material-icons cart">shopping_cart</i>
                 </Link>
             </div>
         </>
@@ -56,32 +79,3 @@ const ItemCount = ({ add, setAdd, initial, stock }) => {
 }
 
 export default ItemCount
-
-//Funcion que devuelve los Items cargados al carrito guardados en localstorage
-// let localCartItems = () => {
-//     let cartItems;
-//     if(localStorage.getItem('cartItems') === null){
-//         cartItems = [];
-//     } else {
-//         cartItems = JSON.parse(localStorage.getItem('cartItems'));
-//     }
-//     return cartItems;
-// }
-
-// let items = localCartItems();
-// items.push( newItem )
-// localStorage.setItem('cartItems',JSON.stringify(items));
-
-
-    // const addToCart = () => {
-
-    //     if(stock > 0){
-            
-    //         let newItem = {
-    //             name: "example",
-    //             value: 300,
-    //             qty: counter,
-    //         }
-    //         console.log(newItem)
-    //     }
-    // }

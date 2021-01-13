@@ -5,13 +5,13 @@
           box-sizing: border-box;
 }
 
-.cart-container {
+.cartwidget-container {
   position: absolute;
   top: 0;
   right: 30px;
 }
 
-.cart-container .material-icons {
+.cartwidget-container .material-icons {
   color: #E0FF00;
   cursor: pointer;
   width: 45px;
@@ -29,7 +29,7 @@
   font-size: 30px;
 }
 
-.cart-container .material-icons:hover {
+.cartwidget-container .material-icons:hover {
   background-color: rgba(0, 0, 0, 0.097);
   font-size: 34px;
 }

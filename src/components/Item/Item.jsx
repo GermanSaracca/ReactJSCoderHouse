@@ -5,8 +5,8 @@ import './Item.css'
 //Routing
 import { Link } from 'react-router-dom'
 
-const Item = ({ id, title, price, pictureUrl }) => {
 
+const Item = ({ id, title, price, pictureUrl }) => {
 
     return (
          <Link to={`/item/${id}`} >
@@ -16,7 +16,7 @@ const Item = ({ id, title, price, pictureUrl }) => {
                 </div>
                 <div className="info-container">
                     <p className="id-code">COD: {id}</p>
-                    <p className='title'>{title}</p>
+                    <p className='title truncate'>{title}</p>
                     <p className='price'>${price}</p>
                 </div>
             </div>

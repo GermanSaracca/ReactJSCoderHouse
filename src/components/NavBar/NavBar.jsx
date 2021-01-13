@@ -34,10 +34,10 @@ const NavBar = () => {
             {/* Mismo menu pero cuando esta colapsado para mobile */}
             <ul className="sidenav" id="mobile-demo">
                 <li>
-                    <NavLink to="/" className="navlink"> Computación </NavLink>
+                    <NavLink to="/categories/computacion" className="navlink"> Computación </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/micuenta" className="navlink"> Gaming </NavLink>
+                    <NavLink to="/categories/gaming" className="navlink"> Gaming </NavLink>
                 </li>
                 <li>
                     <NavLink to="/nosotros" className="navlink"> Nosotros </NavLink>

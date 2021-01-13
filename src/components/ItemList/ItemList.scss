@@ -9,21 +9,32 @@
 }
 
 .ItemList{
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-row-gap: 2vw;
-    grid-column-gap: 2vw;
-    justify-self: center;
-    padding: 0px 3vw;
 
-    @media screen and (min-width:540px){
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto auto ;
+    grid-row-gap: 5vw;
+    grid-column-gap: 5vw;
+
+    @media screen and (min-width: 540px){
         grid-template-columns: auto auto auto;
+        grid-row-gap: 2vw;
+        grid-column-gap: 2vw;
+
     }
-    @media screen and (min-width:820px){
-        grid-template-columns: auto auto auto auto;
+    @media screen and (min-width: 740px){
+        grid-template-columns: auto auto auto ;
     }
-    @media screen and (min-width:820px){
+    @media screen and (min-width: 840px){
+        grid-template-columns: auto auto auto ;
+    }
+    @media screen and (min-width: 940px){
+        grid-template-columns: auto auto auto auto ;
+    }
+    @media screen and (min-width: 1040px){
         grid-template-columns: auto auto auto auto auto;
+        grid-row-gap: 0vw;
+        grid-column-gap: 1vw;
     }
 }
 

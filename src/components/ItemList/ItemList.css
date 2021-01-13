@@ -9,33 +9,51 @@
 .ItemList {
   display: -ms-grid;
   display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-grid-columns: auto auto;
       grid-template-columns: auto auto;
-  grid-row-gap: 2vw;
-  grid-column-gap: 2vw;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  padding: 0px 3vw;
+  grid-row-gap: 5vw;
+  grid-column-gap: 5vw;
 }
 
 @media screen and (min-width: 540px) {
   .ItemList {
     -ms-grid-columns: auto auto auto;
         grid-template-columns: auto auto auto;
+    grid-row-gap: 2vw;
+    grid-column-gap: 2vw;
   }
 }
 
-@media screen and (min-width: 820px) {
+@media screen and (min-width: 740px) {
+  .ItemList {
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+  }
+}
+
+@media screen and (min-width: 840px) {
+  .ItemList {
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+  }
+}
+
+@media screen and (min-width: 940px) {
   .ItemList {
     -ms-grid-columns: auto auto auto auto;
         grid-template-columns: auto auto auto auto;
   }
 }
 
-@media screen and (min-width: 820px) {
+@media screen and (min-width: 1040px) {
   .ItemList {
     -ms-grid-columns: auto auto auto auto auto;
         grid-template-columns: auto auto auto auto auto;
+    grid-row-gap: 0vw;
+    grid-column-gap: 1vw;
   }
 }
 /*# sourceMappingURL=ItemList.css.map */

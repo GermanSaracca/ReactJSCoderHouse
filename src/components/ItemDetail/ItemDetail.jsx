@@ -14,9 +14,7 @@ const ItemDetail = ({item}) => {
 
 
     const [ bigImg, setBigImg ] = useState('');
-    const [ add, setAdd ] = useState();
-
-
+    const [ isAdded, setIsAdded ] = useState(false);
 
     //Si el largo del item es distinto de 0 y a la vez es distinto de "not exist"( lo cual dice q el item no existe)
     // entonces retorno el  componente con el detalle
@@ -57,7 +55,7 @@ const ItemDetail = ({item}) => {
                                 >        
                             </div>
                         </div>
-                        <ItemCount add={add} setAdd={setAdd} initial={1} stock={item[0].stock}/>
+                        <ItemCount isAdded={isAdded} setIsAdded={setIsAdded} initial={1} stock={item[0].stock} item={item} />
                     </div>
                 </div>
                 <div className="right-container">

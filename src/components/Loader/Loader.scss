@@ -1,18 +1,17 @@
 @import '../assets/styles/colors.scss';
 
 .loader-screen {
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
     height: 90vh;
     background-color: $DarkGray;
-    animation: bgChange 2s ease-in infinite;
 
     .preloader-wrapper{
-        position: absolute;
-        top: 50%;
-        left: 50%;
+
         .spinner-layer{
             border-color: $Green !important;
         }
-        
     }
 }

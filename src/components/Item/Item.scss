@@ -15,14 +15,14 @@
     background-color: $DarkGray;
     box-shadow: 0px 0px 4px 1px black;
     border-radius: 3px;
-    overflow: hidden;
     width: auto;
-    max-width: 200px;
-    height: 40vh;
-    max-height: 40vh;
+    max-width: 40vw;
+    height: auto;
+    max-height: fit-content;
+    overflow: hidden;
     cursor: pointer;
     transition: .2s all;
-    
+
     &:hover{
         transform: scale(1.01);
         box-shadow: 0px 0px 13px 2px $Black;
@@ -47,15 +47,92 @@
         }
 
         .title{
-            font-size: 14px;
+            font-size: 12px;
             color: $White;
             text-align: center;
+            white-space: nowrap;
         }
         .price {
-            font-size: 20px;
+            font-size: 14px;
             color: $White;
             text-align: end;
         }
     }
 
+}
+
+@media screen and (min-width:540px){
+    .card-container{
+        max-width: 30vw;
+        max-height: fit-content;
+
+        .img-container{
+            img{
+                height: 30vh;
+            }
+        }
+    }   
+}
+@media screen and (min-width:740px){
+    .card-container{
+        .img-container{
+            img{
+                height: 25vh;
+            }
+        }
+    }   
+}
+@media screen and (min-width:840px){
+    .card-container{
+        max-width: 28vw;
+
+        .img-container{
+            img{
+                height: 30vh;
+                user-select: none;
+            }
+        }
+        .info-container{
+
+            .title{
+                font-size: 14px;
+            }
+            .price {
+                font-size: 22px;
+            }
+        }
+    }   
+}
+@media screen and (min-width:940px){
+    .card-container{
+        max-width: 22vw;
+
+        .img-container{
+            img{
+                height: 17vh;
+                user-select: none;
+            }
+        }
+
+        .info-container{
+
+            .title{
+                font-size: 14px;
+            }
+            .price {
+                font-size: 22px;
+            }
+        }
+    }   
+}
+@media screen and (min-width:1040px){
+    .card-container{
+        max-width: 16vw;
+
+        .img-container{
+            img{
+                height: 25vh;
+            }
+        }
+    }   
 }
