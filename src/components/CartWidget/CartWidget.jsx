@@ -12,16 +12,17 @@ import './CartWidget.css'
 const CartWidget = () => {
 
     const contextCart = useContext(CartContext);
-    const [ , , , , totalItems ] = contextCart;
+    const [ , , , ,items] = contextCart;
+
 
     return (
         <>  
             <div className = "cartwidget-container">
                 {
-                    totalItems > 0
+                    items > 0
                      &&
                     <div className="total-items">
-                        <p>{totalItems}</p>
+                        <p>{items}</p>
                     </div>
                 }
 

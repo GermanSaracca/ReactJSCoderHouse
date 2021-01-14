@@ -1,0 +1,66 @@
+@import '../assets/styles/colors.scss';
+@import '../assets/styles/fonts.scss';
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $Gray;
+    width: 100%;
+    height: 90vh;
+    .cart {
+        width: 70vw;
+        box-shadow: 0px 0px 4px 3px $Black;
+        border-radius: 5px;
+        overflow: hidden;
+
+        .cart-columns {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+            align-items: center;
+            justify-content: space-around;
+            height: 7vh;
+            background-color: $DarkGray;
+    
+            p{
+                color: $White;
+                width: 10vw;
+                text-align: center;
+            }
+        }
+        .cart-items {
+            height: 60vh;
+            background-color: $White;
+            overflow-y: auto;
+            overflow-x: hidden;
+
+            &::-webkit-scrollbar{
+                width: 7px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: $Green;
+            }
+        }
+        .cart-total {
+            display: flex;
+            align-items: center;
+            padding: 0px 25px;
+            height: 7vh;
+            background-color: $DarkGray;
+    
+            .total-amount{
+                font-size: 1.8vw;
+                color: $White;
+                width: 50%;
+                text-align: center;
+            }
+            .btn {
+                color: $DarkGray;
+                font-weight: 600;
+                background-color: $Green;
+                width: 50%;
+            }
+        }
+    }
+}

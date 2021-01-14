@@ -296,6 +296,10 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
+    -webkit-transition: .15s;
+    transition: .15s;
+    -webkit-transition-delay: .35s;
+            transition-delay: .35s;
     cursor: pointer;
   }
   .item-detail .left-container .img-counter-container .small-images-big-image-container .big-image:hover {

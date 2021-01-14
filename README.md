@@ -1,6 +1,6 @@
 <h1>Proyecto integrador E-Commerce - Curso de React JS de CoderHouse</h1>
 
-![React App - Google Chrome 2021-01-08 18-41-43](https://user-images.githubusercontent.com/64560524/104069941-845cce00-51e4-11eb-8b65-b5e43196ad9b.gif)
+![React App (1)](https://user-images.githubusercontent.com/64560524/104660364-2aa54980-56a5-11eb-8fd6-63c1f5282081.gif)
 
 
 <h3>

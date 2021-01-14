@@ -29,21 +29,21 @@ const ItemDetail = ({item}) => {
                                     style={{ 
                                         backgroundImage: `url(${item[0].pictureUrl[0]})` 
                                     }}
-                                    onClick={ () => setBigImg({backgroundImage: `url(${item[0].pictureUrl[0] })`})}
+                                    onMouseOver={ () => setBigImg({backgroundImage: `url(${item[0].pictureUrl[0] })`})}
                                 >
                                 </div>
                                 <div className="sm-img" 
                                     style={{
                                         backgroundImage: `url(${ item[0].pictureUrl[1] !== undefined ? item[0].pictureUrl[1] : item[0].pictureUrl[0] })` 
                                     }}
-                                    onClick={ () => setBigImg({backgroundImage: `url(${item[0].pictureUrl[1] !== undefined ? item[0].pictureUrl[1] : item[0].pictureUrl[0] })`})}
+                                    onMouseOver={ () => setBigImg({backgroundImage: `url(${item[0].pictureUrl[1] !== undefined ? item[0].pictureUrl[1] : item[0].pictureUrl[0] })`})}
                                 >
                                 </div>
                                 <div className="sm-img" 
                                     style={{
                                         backgroundImage: `url(${item[0].pictureUrl[2] !== undefined ? item[0].pictureUrl[2] : item[0].pictureUrl[0] })`,
                                     }}
-                                    onClick={ () =>{
+                                    onMouseOver={ () =>{
                                         setBigImg({backgroundImage: `url(${item[0].pictureUrl[2] !== undefined ? item[0].pictureUrl[2] : item[0].pictureUrl[0] })`});
                                     }}
                                 >

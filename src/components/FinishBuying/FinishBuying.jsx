@@ -10,7 +10,7 @@ const FinishBuying = () => {
         <div className="finish-buying">
             <Link to="/cart" 
                 className="waves-effect btn">
-                Terminar compra
+                Ir al carrito
                 <i className="material-icons cart">shopping_cart</i>
             </Link>
          </div>

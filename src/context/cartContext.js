@@ -1,10 +1,29 @@
-import React,{useState,createContext} from 'react';
+import React,{useState,createContext,useEffect} from 'react';
 
 export const CartContext = createContext([]);
 
 export const CartProvider = ({ children }) => {
 
-    const [cart,setCart] = useState([]);
+    const itemsInLocal = () => {
+
+        if (localStorage.getItem('cart') !== null) {
+
+            return JSON.parse(localStorage.getItem('cart'))
+        }else {
+            return [];
+        }
+    };
+
+    const [cart,setCart] = useState(  itemsInLocal  );
+    const [items,setItems] = useState(0);
+    const [total,setTotal] = useState(0);
+
+    useEffect(() => {
+        updateItems();
+        localStorage.setItem('cart',JSON.stringify(cart));
+        totalGral();
+    });
+
 
     const addToCart = (obj) => {
 
@@ -16,24 +35,25 @@ export const CartProvider = ({ children }) => {
             
             const indexOfDuplicate = cart.findIndex(product => product.item === obj.item);
             
-
             cart.splice(indexOfDuplicate, 1,
                 {
                     item : obj.item,
                     quantity: obj.quantity + duplicate.quantity,
-                    price: obj.price
+                    price: obj.price,
+                    img: obj.img
                 }
-            )
-
-
-        
+            );
+            
+            
+            
         }else{
             setCart([
                 ...cart,
                 {
                     item : obj.item,
                     quantity: obj.quantity,
-                    price: obj.price
+                    price: obj.price,
+                    img: obj.img
                 }
             ]);
         }
@@ -47,11 +67,24 @@ export const CartProvider = ({ children }) => {
             return false;
         }
     };
-    const totalItems = cart.length;
 
+    const updateItems = ()=>{
+        let total = 0;
+        cart.map(item => total = total + item.quantity);
+        setItems(total);
+    };
+    
+    const totalGral = () => {
+        let sumalize = 0;
 
+        for(let i = 0; i< cart.length; i++){
+          sumalize = sumalize + (cart[i].price * cart[i].quantity);
+        }
+        setTotal(sumalize);
+    };
+    
     return(
-        <CartContext.Provider value={[ addToCart, isInCart, cart, setCart, totalItems ]}>
+        <CartContext.Provider value={[ addToCart, isInCart, cart, setCart, items ,updateItems,total ]}>
             {children}
         </CartContext.Provider>
     )
