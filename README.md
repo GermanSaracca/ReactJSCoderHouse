@@ -1,7 +1,7 @@
 <h1>Proyecto integrador E-Commerce - Curso de React JS de CoderHouse</h1>
 
-![React App (1)](https://user-images.githubusercontent.com/64560524/104660364-2aa54980-56a5-11eb-8fd6-63c1f5282081.gif)
-
+![React App](https://user-images.githubusercontent.com/64560524/104661233-d8652800-56a6-11eb-8dc6-546640d0b35f.gif)
+![React App (1)](https://user-images.githubusercontent.com/64560524/104661531-7658f280-56a7-11eb-97d9-85cfefaa26ac.gif)
 
 <h3>
 Proyecto en proceso. Hasta ahora se simularon todas las llamadas a una API a traves de promesas que devuelven arrays de productos hardcodeados.   
