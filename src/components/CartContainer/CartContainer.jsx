@@ -1,7 +1,7 @@
-import React,{useEffect,useContext} from 'react';
+import React,{useContext} from 'react';
 
 //CSS particular
-import './Cart.css';
+import './CartContainer.css';
 //Context
 import {CartContext} from '../../context/cartContext';
 
@@ -17,7 +17,11 @@ const Cart = () => {
             <ol>
             {
                 cart.map(prod =>(
-                    <li key={prod.item}> {prod.item} </li>
+                    <li key={prod.item}>
+                        <p>{prod.item}</p>  
+                        <p>{prod.price}</p>  
+                        <p>{prod.quantity}</p>  
+                    </li>
                 ))
             }
             </ol>

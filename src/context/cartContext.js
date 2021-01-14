@@ -13,7 +13,19 @@ export const CartProvider = ({ children }) => {
         const duplicate = cart.find(product => product.item === obj.item);
 
         if(duplicate !== undefined){
-            setCart(cart)
+            
+            const indexOfDuplicate = cart.findIndex(product => product.item === obj.item);
+            
+
+            cart.splice(indexOfDuplicate, 1,
+                {
+                    item : obj.item,
+                    quantity: obj.quantity + duplicate.quantity,
+                    price: obj.price
+                }
+            )
+
+
         
         }else{
             setCart([
@@ -26,6 +38,7 @@ export const CartProvider = ({ children }) => {
             ]);
         }
     };
+
     const isInCart = (itemName)=> {
         const isIn = cart.find(product => product.item === itemName);
         if(isIn !== undefined){
@@ -33,11 +46,12 @@ export const CartProvider = ({ children }) => {
         } else {
             return false;
         }
-    } 
+    };
+    const totalItems = cart.length;
 
 
     return(
-        <CartContext.Provider value={[ addToCart, isInCart, cart, setCart ]}>
+        <CartContext.Provider value={[ addToCart, isInCart, cart, setCart, totalItems ]}>
             {children}
         </CartContext.Provider>
     )

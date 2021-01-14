@@ -1,17 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 //Particular CSS
-import './ItemDetail.css'
+import './ItemDetail.css';
 
 //Components
-import ItemCount from '../ItemCount/ItemCount'
-import Loader from '../Loader/Loader'
-import NotExists from '../NotExists/NotExists'
-
+import ItemCount from '../ItemCount/ItemCount';
+import Loader from '../Loader/Loader';
+import NotExists from '../NotExists/NotExists';
+import FinishBuying from '../FinishBuying/FinishBuying';
 
 
 const ItemDetail = ({item}) => {
-
 
     const [ bigImg, setBigImg ] = useState('');
     const [ isAdded, setIsAdded ] = useState(false);
@@ -52,10 +51,15 @@ const ItemDetail = ({item}) => {
                             </div>
                             <div className="big-image" 
                                 style={bigImg !== '' ? bigImg : { backgroundImage: `url(${item[0]?.pictureUrl[0] })`} }
-                                >        
+                                >      
                             </div>
                         </div>
-                        <ItemCount isAdded={isAdded} setIsAdded={setIsAdded} initial={1} stock={item[0].stock} item={item} />
+                        <ItemCount isAdded={isAdded} setIsAdded={setIsAdded} initial={1} stock={item[0].stock} item={item} /> 
+                        {
+                            isAdded 
+                                && 
+                            <FinishBuying/>
+                        } 
                     </div>
                 </div>
                 <div className="right-container">
@@ -64,8 +68,6 @@ const ItemDetail = ({item}) => {
                         <h4>${item[0].price}</h4>
                         <small>COD: {item[0].id}</small>
                     </div>
-
-                    
                     <div className="details-container">
                         <ul>
                             <li>Marca: <span className="span">{ item[0].details.brand }</span></li>
@@ -79,8 +81,6 @@ const ItemDetail = ({item}) => {
                             <li>Tamaño de la pantalla:  <span className="span"> { item[0].details.screenSize } </span></li>
                         </ul>
                     </div>
-                    
-                    
                 </div>
             </div>
         ) 

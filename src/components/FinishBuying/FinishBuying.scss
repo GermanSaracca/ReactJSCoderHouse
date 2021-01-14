@@ -1,0 +1,34 @@
+@import '../assets/styles/colors.scss';
+@import '../assets/styles/fonts.scss';
+
+.finish-buying {
+    background-color: $Gray;
+    padding: 5px;
+    // box-shadow: 0px 0px 4px 3px $Black;
+
+    .btn {
+        color: $DarkGray;
+        font-weight: 600;
+        background-color: #0CCE6B;
+        width: 100%;
+        animation: appear 1.3s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            font-size: 18px;
+        }
+
+        .cart {
+            margin-left: 2%;
+        }
+    }
+    @keyframes appear {
+        from{
+            opacity: 0;
+        }to{
+            opacity: 1;
+        }
+    }
+}

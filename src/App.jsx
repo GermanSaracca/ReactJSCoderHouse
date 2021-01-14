@@ -11,7 +11,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 import NavBar from  './components/NavBar/NavBar.jsx';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.jsx';
-import Cart from './components/Cart/Cart';
+import CartContainer from './components/CartContainer/CartContainer';
 
 //Librerias
 import { toast } from 'react-toastify';
@@ -55,7 +55,7 @@ const App = () => {
                     <Route path="/" exact component={ItemListContainer}/>
                     <Route path="/categories/:categoryId" component={ItemListContainer}/>
                     <Route path="/item/:id" component={ItemDetailContainer}/>
-                    <Route path="/cart" component={Cart}/>
+                    <Route path="/cart" component={CartContainer}/>
                 </Switch>
             </CartProvider>
         </Router>
