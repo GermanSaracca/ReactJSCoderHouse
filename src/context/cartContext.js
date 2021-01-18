@@ -18,6 +18,7 @@ export const CartProvider = ({ children }) => {
     const [items,setItems] = useState(0);
     const [total,setTotal] = useState(0);
 
+
     useEffect(() => {
         updateItems();
         localStorage.setItem('cart',JSON.stringify(cart));
@@ -43,9 +44,7 @@ export const CartProvider = ({ children }) => {
                     img: obj.img
                 }
             );
-            
-            
-            
+        
         }else{
             setCart([
                 ...cart,
@@ -83,8 +82,23 @@ export const CartProvider = ({ children }) => {
         setTotal(sumalize);
     };
     
+    const deleteItem = (itemName)=> {
+        
+        const indexItemToDelete = cart.findIndex(product => product.item === itemName);
+        cart.splice(indexItemToDelete,1);
+        
+
+        let localItems = JSON.parse(localStorage.getItem('cart'));
+        localItems.splice(indexItemToDelete,1);
+
+        localStorage.setItem('cart',JSON.stringify(localItems));
+
+        setCart(localItems);
+
+    }
+    
     return(
-        <CartContext.Provider value={[ addToCart, isInCart, cart, setCart, items ,updateItems,total ]}>
+        <CartContext.Provider value={[ addToCart, isInCart, cart, setCart, items ,updateItems,total, deleteItem ]}>
             {children}
         </CartContext.Provider>
     )

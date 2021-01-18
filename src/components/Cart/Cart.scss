@@ -17,7 +17,7 @@
 
         .cart-columns {
             display: grid;
-            grid-template-columns: auto auto auto auto auto;
+            grid-template-columns: auto auto auto auto auto auto;
             align-items: center;
             justify-content: space-around;
             height: 7vh;
@@ -27,6 +27,11 @@
                 color: $White;
                 width: 10vw;
                 text-align: center;
+
+                &:first-child {
+                    width: 2vw;
+                    text-align: start;
+                }
             }
         }
         .cart-items {
@@ -62,5 +67,25 @@
                 width: 50%;
             }
         }
+    }
+
+}
+.cart-container-empty {
+    @extend .cart-container;
+    background-color: $DarkGray;
+    
+    .empty-cart-title {
+        color: $Green;
+        line-height: 50px;
+    }
+    .empty-cart {
+        font-size: 10vw;
+        color: $Green;
+    }
+    .backToLanding-btn {
+        color: $DarkGray;
+        font-weight: 600;
+        background-color: $Green;
+        height: 10vh;
     }
 }

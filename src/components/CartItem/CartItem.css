@@ -1,8 +1,8 @@
 .cart-item {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto auto auto auto;
-      grid-template-columns: auto auto auto auto auto;
+  -ms-grid-columns: auto auto auto auto auto auto;
+      grid-template-columns: auto auto auto auto auto auto;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
@@ -12,6 +12,8 @@
   height: auto;
   width: 100%;
   padding: 5px;
+  -webkit-transition: 1s all;
+  transition: 1s all;
 }
 
 .cart-item .item {
@@ -30,5 +32,16 @@
   background-size: contain;
   height: 100%;
   width: 100%;
+}
+
+.cart-item .delete-item {
+  cursor: pointer;
+  color: #7A7A7A;
+  min-width: 2vw;
+  max-width: 2vw;
+}
+
+.cart-item .delete-item:hover {
+  color: #373F47;
 }
 /*# sourceMappingURL=CartItem.css.map */

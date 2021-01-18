@@ -23,12 +23,12 @@ import {CartProvider} from './context/cartContext';
 //Router 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-
 //Css particular
 import './components/assets/styles/app.css'
 
 
 const App = () => {
+
 
     //Inicializo funcionalidades de materialize e invoco el toast de bienvenida
     useEffect(() => {

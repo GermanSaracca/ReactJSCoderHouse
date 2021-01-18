@@ -24,7 +24,7 @@ const NavBar = () => {
                             <NavLink to="/categories/gaming" className="navlink"> Gaming </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/nosotros" className="navlink"> Nosotros </NavLink>
+                            <NavLink to="/wishlist" className="navlink"> Mi lista de deseos </NavLink>
                         </li>
                     </ul>
                     {/* Icono de carrito de compras */}
@@ -40,7 +40,7 @@ const NavBar = () => {
                     <NavLink to="/categories/gaming" className="navlink"> Gaming </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/nosotros" className="navlink"> Nosotros </NavLink>
+                    <NavLink to="/wishlist" className="navlink"> Mi lista de deseos </NavLink>
                 </li>
             </ul>
         </>

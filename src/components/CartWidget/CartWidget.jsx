@@ -13,23 +13,25 @@ const CartWidget = () => {
 
     const contextCart = useContext(CartContext);
     const [ , , , ,items] = contextCart;
+    console.log(items)
 
 
     return (
         <>  
-            <div className = "cartwidget-container">
+            <div className = "cartwidget-container" >
                 {
-                    items > 0
-                     &&
+                    items > 0 
+                    && 
                     <div className="total-items">
                         <p>{items}</p>
                     </div>
                 }
-
-                <Link to="/cart"> <i className="material-icons">shopping_cart</i> </Link>
+                <Link to="/cart" > <i className="material-icons">shopping_cart</i> </Link>
             </div>
         </>
     )
+
+
 }
 
 export default CartWidget

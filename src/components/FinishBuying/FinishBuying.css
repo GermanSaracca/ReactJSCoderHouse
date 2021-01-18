@@ -4,12 +4,6 @@
 }
 
 .finish-buying .btn {
-  color: #373F47;
-  font-weight: 600;
-  background-color: #0CCE6B;
-  width: 100%;
-  -webkit-animation: appear 1.3s;
-          animation: appear 1.3s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -19,6 +13,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #373F47;
+  font-weight: 600;
+  background-color: #0CCE6B;
+  width: 100%;
+  -webkit-animation: appear 1.3s;
+          animation: appear 1.3s;
 }
 
 .finish-buying .btn:hover {

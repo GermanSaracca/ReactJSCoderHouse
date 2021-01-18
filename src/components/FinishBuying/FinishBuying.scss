@@ -4,17 +4,16 @@
 .finish-buying {
     background-color: $Gray;
     padding: 5px;
-    // box-shadow: 0px 0px 4px 3px $Black;
 
     .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         color: $DarkGray;
         font-weight: 600;
         background-color: #0CCE6B;
         width: 100%;
         animation: appear 1.3s;
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
         &:hover {
             font-size: 18px;
