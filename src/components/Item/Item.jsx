@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom'
 
 const Item = ({ id, title, price, pictureUrl }) => {
 
+
+
     return (
          <Link to={`/item/${id}`} >
             <div className="card-container">
@@ -15,7 +17,6 @@ const Item = ({ id, title, price, pictureUrl }) => {
                     <img src={pictureUrl} alt=""/>
                 </div>
                 <div className="info-container">
-                    <p className="id-code">COD: {id}</p>
                     <p className='title truncate'>{title}</p>
                     <p className='price'>${price}</p>
                 </div>

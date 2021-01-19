@@ -22,7 +22,7 @@ export const CartProvider = ({ children }) => {
     useEffect(() => {
         updateItems();
         localStorage.setItem('cart',JSON.stringify(cart));
-        totalGral();
+        getTotal();
     });
 
 
@@ -68,37 +68,24 @@ export const CartProvider = ({ children }) => {
     };
 
     const updateItems = ()=>{
-        let total = 0;
-        cart.map(item => total = total + item.quantity);
+        let total = cart.reduce(( acc,item ) => acc  + item.quantity, 0);
         setItems(total);
     };
     
-    const totalGral = () => {
-        let sumalize = 0;
-
-        for(let i = 0; i< cart.length; i++){
-          sumalize = sumalize + (cart[i].price * cart[i].quantity);
-        }
+    const getTotal = () => {
+        const sumalize = cart.reduce( (acc, prod) => acc + prod.price * prod.quantity, 0 );
         setTotal(sumalize);
     };
     
     const deleteItem = (itemName)=> {
         
-        const indexItemToDelete = cart.findIndex(product => product.item === itemName);
-        cart.splice(indexItemToDelete,1);
-        
-
-        let localItems = JSON.parse(localStorage.getItem('cart'));
-        localItems.splice(indexItemToDelete,1);
-
-        localStorage.setItem('cart',JSON.stringify(localItems));
-
-        setCart(localItems);
-
-    }
+        const editedItems = cart.filter(product => product.item !== itemName );
+        setCart(editedItems);
+        localStorage.setItem('cart',JSON.stringify(editedItems));
+    };
     
     return(
-        <CartContext.Provider value={[ addToCart, isInCart, cart, setCart, items ,updateItems,total, deleteItem ]}>
+        <CartContext.Provider value={[ addToCart, isInCart, cart, setCart, items ,updateItems, total, deleteItem ]}>
             {children}
         </CartContext.Provider>
     )

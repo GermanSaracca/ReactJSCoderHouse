@@ -16,7 +16,6 @@ const Cart = () => {
     const [ , ,cart, , , ,total,deleteItem] = contextCart;
 
 
-
     if (cart.length !== 0) {
 
         return (

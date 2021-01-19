@@ -48,7 +48,7 @@ const ItemCount = ({ setIsAdded, initial, stock, item }) => {
 
                 <button 
                     onClick={ ()=>{
-                        addToCart({item:item[0].title, quantity: counter, price: item[0].price, img: item[0].pictureUrl[0]});
+                        addToCart({item:item.name, quantity: counter, price: item.price, img: item.pictureUrl[0]});
                         setCounter(initial);
                         setIsAdded(true);
                         updateItems();

@@ -6,19 +6,19 @@ import Item from '../Item/Item'
 //Particular CSS
 import './ItemList.css'
 
-const ItemList = ({ list }) => {
+const ItemList = ({ items }) => {
 
     return (
         <div className="ItemList">
-            { list.map( p =>
+            { items.map( p =>
                 <Item
-                key={p.id}
-                id={p.id} 
-                title={p.title} 
-                price={p.price} 
-                stock={p.stock} 
-                pictureUrl={p.pictureUrl}  
-                />) }
+                    key={p.id}
+                    id={p.id} 
+                    title={p.name} 
+                    price={p.price} 
+                    pictureUrl={p.pictureUrl}  
+                />)
+            }
         </div>
     )
 }

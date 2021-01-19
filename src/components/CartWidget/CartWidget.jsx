@@ -13,8 +13,6 @@ const CartWidget = () => {
 
     const contextCart = useContext(CartContext);
     const [ , , , ,items] = contextCart;
-    console.log(items)
-
 
     return (
         <>  
