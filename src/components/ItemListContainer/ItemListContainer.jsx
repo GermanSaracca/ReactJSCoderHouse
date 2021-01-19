@@ -19,12 +19,11 @@ const ItemListContainer = () => {
     const {categoryId} = useParams();
 
     const [items, setItems] = useState([]);
+    
 
     useEffect(() => {
 
-
         const db = getFirestore();
-
         const itemCollection = db.collection("items");
 
         itemCollection.get().then(( querySnapshot ) => {
@@ -35,10 +34,8 @@ const ItemListContainer = () => {
 
             const documents = querySnapshot.docs.map( doc => ( {id: doc.id, ...doc.data()} ) )
             setItems( documents ) ;
-
         })
         .catch(err => {
-
             console.log('Error searching items', err );
         });
 
@@ -57,7 +54,7 @@ const ItemListContainer = () => {
             ) 
         }else{
             return(
-                <div className="item-list-container">    
+                <div className="item-list-container ">    
                     <ItemList items={items} />
                 </div>
             )

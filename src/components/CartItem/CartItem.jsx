@@ -7,7 +7,7 @@ const CartItem = ({item, quantity, price, img , deleteItem }) => {
 
     return (
         <>
-            <div className="cart-item">
+            <div className="cart-item ">
                 <i onClick={ ()=> deleteItem(item) } className="material-icons delete-item item" >cancel</i>
                 <div  className="item-img item" style={{backgroundImage: `url(${img})`}}>
                 </div>

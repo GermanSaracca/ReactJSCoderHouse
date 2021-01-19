@@ -21,6 +21,7 @@ const ItemDetailContainer = () => {
 
     const {id} = useParams();
 
+
     useEffect(() => {
 
         const db = getFirestore();

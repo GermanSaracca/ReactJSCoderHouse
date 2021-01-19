@@ -9,12 +9,13 @@ import './ItemList.css'
 const ItemList = ({ items }) => {
 
     return (
+        
         <div className="ItemList">
             { items.map( p =>
                 <Item
                     key={p.id}
                     id={p.id} 
-                    title={p.name} 
+                    name={p.name} 
                     price={p.price} 
                     pictureUrl={p.pictureUrl}  
                 />)
