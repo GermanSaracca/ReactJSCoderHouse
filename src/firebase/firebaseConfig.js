@@ -2,6 +2,7 @@
 //Inicializacion de Firebase/Firestore
 import firebase from 'firebase/app';
 import '@firebase/firestore';
+import '@firebase/auth';
 
 const app = firebase.initializeApp({
     apiKey: "AIzaSyBTYgf6ul4ubRdZfOXW-l5JVxOYVx2nGDw",
@@ -12,10 +13,12 @@ const app = firebase.initializeApp({
     appId: "1:128304735942:web:3e98bfc63ebfb6c5e8d9c7"
 });
 
-export function getFirebase() {
+export const getFirebase = () => {
     return app;
 }
 
-export function getFirestore() {
+export const getFirestore = () => {
     return firebase.firestore(app);
-}
+};
+
+

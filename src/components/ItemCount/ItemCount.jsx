@@ -42,19 +42,21 @@ const ItemCount = ({ setIsAdded, initial, stock, item }) => {
 
                     <button onClick = { removeItem } className="waves-effect waves-light btn counter-btn" disabled={ counter <= initial }><p>-</p></button>
                     <p className="counter-value" >{counter}</p>
-                    <button onClick = { addItem } className="waves-effect waves-light btn counter-btn" disabled={ counter >= stock }><p>+</p></button>
+                    <button onClick = { addItem } className="waves-effect waves-light btn counter-btn" disabled={ counter >= stock || stock === 0}><p>+</p></button>
                     
                 </div>
 
                 <button 
                     onClick={ ()=>{
-                        addToCart({item:item.name, quantity: counter, price: item.price, img: item.pictureUrl[0]});
+                        addToCart({item:item.name, quantity: counter, price: item.price, img: item.pictureUrl[0], id: item.id});
                         setCounter(initial);
                         setIsAdded(true);
                         updateItems();
                         toasti();
                     }}
-                    className="waves-effect btn">
+                    className="waves-effect btn"
+                    disabled={stock === 0}
+                >
                     Agregar al carrito
                 </button>
             </div>

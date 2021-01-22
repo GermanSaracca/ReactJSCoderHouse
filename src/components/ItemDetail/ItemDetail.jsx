@@ -58,7 +58,7 @@ const ItemDetail = ({item}) => {
                             >      
                         </div>
                     </div>
-                    <ItemCount isAdded={isAdded} setIsAdded={setIsAdded} initial={1} stock={item.stock} item={item} /> 
+                    <ItemCount isAdded={isAdded} setIsAdded={setIsAdded} initial={item.initial} stock={item.stock} item={item} /> 
                     {
                         isAdded 
                             && 

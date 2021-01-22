@@ -128,11 +128,12 @@
 }
 @media screen and (min-width:1040px){
     .card-container{
-        max-width: 16vw;
+        width: 250px;
+        height: 250px;
 
         .img-container{
             img{
-                height: 25vh;
+                height: 180px;
             }
         }
     }   

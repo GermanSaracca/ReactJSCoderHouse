@@ -11,10 +11,12 @@
 .ItemList{
 
     display: grid;
+    justify-content: space-between;
     align-items: center;
     grid-template-columns: auto auto ;
     grid-row-gap: 5vw;
     grid-column-gap: 5vw;
+    width: 90%;
     
 
     @media screen and (min-width: 540px){
@@ -33,9 +35,9 @@
         grid-template-columns: auto auto auto auto ;
     }
     @media screen and (min-width: 1040px){
-        grid-template-columns: auto auto auto auto auto;
-        grid-row-gap: 0vw;
-        grid-column-gap: 1vw;
+        grid-template-columns: auto auto auto auto ;
+        grid-row-gap: 3vw;
+        grid-column-gap: 3vw;
     }
 }
 

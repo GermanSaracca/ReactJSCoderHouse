@@ -6,6 +6,7 @@ const Loader = () => {
     return (
         <>
             <div className="loader-screen">
+
                 <div className="preloader-wrapper big active">
                     <div className="spinner-layer">
                         <div className="circle-clipper left">
@@ -19,7 +20,10 @@ const Loader = () => {
                         </div>
                     </div>
                 </div>
+                
             </div>   
+
+            
         </>
     )
 }

@@ -1,10 +1,11 @@
 import React from 'react';
 //Components
-import CartWidget from "../CartWidget/CartWidget"
+import CartWidget from "../CartWidget/CartWidget";
 //Particular Css
 import './NavBar.css';
 //Routing
 import {NavLink} from 'react-router-dom'
+
 
 
 const NavBar = () => {

@@ -7,7 +7,7 @@ import ItemList from '../ItemList/ItemList'
 import Loader from '../Loader/Loader';
 
 //Firestore
-import { getFirestore } from '../../firebase/index';
+import { getFirestore } from '../../firebase/firebaseConfig';
 
 //Particular CSS
 import './ItemListContainer.css'

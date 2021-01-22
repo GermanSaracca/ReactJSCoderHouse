@@ -17,6 +17,9 @@ export const CartProvider = ({ children }) => {
     const [cart,setCart] = useState(  itemsInLocal  );
     const [items,setItems] = useState(0);
     const [total,setTotal] = useState(0);
+    const [orderId, setOrderId] = useState();
+ 
+
 
 
     useEffect(() => {
@@ -41,7 +44,9 @@ export const CartProvider = ({ children }) => {
                     item : obj.item,
                     quantity: obj.quantity + duplicate.quantity,
                     price: obj.price,
-                    img: obj.img
+                    img: obj.img,
+                    id: obj.id
+
                 }
             );
         
@@ -52,7 +57,8 @@ export const CartProvider = ({ children }) => {
                     item : obj.item,
                     quantity: obj.quantity,
                     price: obj.price,
-                    img: obj.img
+                    img: obj.img,
+                    id: obj.id
                 }
             ]);
         }
@@ -85,7 +91,7 @@ export const CartProvider = ({ children }) => {
     };
     
     return(
-        <CartContext.Provider value={[ addToCart, isInCart, cart, setCart, items ,updateItems, total, deleteItem ]}>
+        <CartContext.Provider value={[ addToCart, isInCart, cart, setCart, items ,updateItems, total, deleteItem, orderId, setOrderId,itemsInLocal ]}>
             {children}
         </CartContext.Provider>
     )

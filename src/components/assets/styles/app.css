@@ -11,6 +11,7 @@
   background-color: #373F47;
   border: solid 2px #7A7A7A;
   border-radius: 5px;
+  line-height: 25px;
 }
 
 .Toastify__toast .Toastify__close-button {
