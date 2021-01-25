@@ -30,7 +30,11 @@ const BuyingForm = () => {
 
     const [ , ,cart, setCart, , ,total, , orderIds , setOrderIds, itemsInLocal] = useContext(CartContext);
 
-    const { register, handleSubmit, errors } = useForm();
+    const { register, handleSubmit, watch, errors } = useForm();
+    const email = watch("email");
+    const confirmEmail = watch("confirmEmail");
+
+    const [passErr, setPassErr] = useState(false);
  
     const [ error, setError ] = useState(false);
     
@@ -213,6 +217,26 @@ const BuyingForm = () => {
                         { errors.email && <small>{ errors.email.message }</small> }
                     </div>
 
+                    <div className="input-field">
+                        <i className="material-icons prefix">email</i>
+                        <input 
+                        name="confirmEmail" 
+                        id="confirmEmail" 
+                        type="email" 
+                        className="validate" 
+                        autoComplete="none"
+                        ref={register({
+                            required: "Ingrese un email", pattern:{ 
+                                value:/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/ , message: "Ingrese un email valido"
+                            } 
+                        })} 
+                        onBlur = { ()=> confirmEmail !== email ? setPassErr(true) : setPassErr(false)}
+                        onChange = { ()=> confirmEmail === email && setPassErr(false) }
+                        />
+                        <label htmlFor="confirmEmail">Confirmar Email</label>
+                        { passErr && <small>{ "Sus contraseñas son diferentes"}</small> }
+                    </div>
+
                     {/* Unica forma de que los autocomplete "none" funcionen fue agregando autoComplete = "none" a todos los inputs
                     y crear un ultimo input innecesario (display: none) con autoComplete='on' */}
                     <div className="input-field" style={{display: 'none'}}>
@@ -237,7 +261,7 @@ const BuyingForm = () => {
                                 </div>
                             </button>
                         ) : (
-                            <button type="submit" className= "waves-effect btn btn-buy ">
+                            <button disabled={ confirmEmail !== email } type="submit" className= "waves-effect btn btn-buy ">
                                 Finalizar compra
                             </button>
                         )

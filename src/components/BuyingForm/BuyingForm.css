@@ -10,7 +10,8 @@
           align-items: center;
   background-color: #7A7A7A;
   width: 100%;
-  height: 90vh;
+  height: auto;
+  padding: 5vh;
 }
 
 .buy-form-container .form-container {
@@ -21,9 +22,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -40,6 +40,7 @@
 
 .buy-form-container .form-container .input-field {
   width: 85%;
+  margin: 10px;
 }
 
 .buy-form-container .form-container .input-field input {

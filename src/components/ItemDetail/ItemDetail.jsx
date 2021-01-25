@@ -70,10 +70,8 @@ const ItemDetail = ({item}) => {
                         <h4 className="item-name">{item.name}</h4>
                         &nbsp;
                         &nbsp;
-                        <i onClick={likedItem}
-                            className="material-icons favorite"
-                        >
-                        {liked ? 'favorite' : 'favorite_border'}
+                        <i onClick={likedItem} className="material-icons favorite">
+                            {liked ? 'favorite' : 'favorite_border'}
                         </i>
                     </div>
                     <h4>${item.price}</h4>

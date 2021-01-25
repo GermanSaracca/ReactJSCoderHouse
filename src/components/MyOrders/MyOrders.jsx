@@ -92,7 +92,8 @@ const MyOrders = () => {
     
                                     <div className="order-row" key={id}>
                                         <div className="order-info date" >
-                                            {
+                                            {   
+                                                date &&
                                                 `${time(date.seconds).c.day}/${time(date.seconds).c.month}/${time(date.seconds).c.year} 
                                                 ${time(date.seconds).c.hour}:${time(date.seconds).c.minute} `
                                             }                           
@@ -100,6 +101,7 @@ const MyOrders = () => {
                                         <div className="order-info items">
                                             <ul>
                                             {
+                                                items &&
                                                 items.map(item => <li className="truncate" key= {item.id}>-{item.item}</li> )
                                             }
                                             </ul>
