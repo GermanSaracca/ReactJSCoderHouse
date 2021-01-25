@@ -64,6 +64,14 @@
                 border-bottom: 2px solid $Gray;
                 padding: 4px;
                 min-height: 48px;
+
+                &:first-child {
+
+                    .id {
+                        background-color: $Green;
+                    }
+                    
+                }
     
                 .order-info {
                     width: 25%;

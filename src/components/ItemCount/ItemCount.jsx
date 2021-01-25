@@ -11,7 +11,6 @@ import './ItemCount.css'
 
 const ItemCount = ({ setIsAdded, initial, stock, item }) => {
 
-
     const contextCart = useContext(CartContext);
     const [ addToCart, , , , ,updateItems  ] = contextCart;
 
@@ -48,7 +47,7 @@ const ItemCount = ({ setIsAdded, initial, stock, item }) => {
 
                 <button 
                     onClick={ ()=>{
-                        addToCart({item:item.name, quantity: counter, price: item.price, img: item.pictureUrl[0], id: item.id});
+                        addToCart({item:item.name, quantity: counter, price: item.price, img: item.pictureUrl[0], id: item.id, stock: item.stock});
                         setCounter(initial);
                         setIsAdded(true);
                         updateItems();

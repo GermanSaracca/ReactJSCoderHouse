@@ -104,7 +104,7 @@ const MyOrders = () => {
                                             }
                                             </ul>
                                         </div>
-                                        <div className="order-info total"> { id } </div>
+                                        <div className="order-info id"> { id } </div>
                                         <div className="order-info total"> ${ total } </div>
                                     </div>
                                 )

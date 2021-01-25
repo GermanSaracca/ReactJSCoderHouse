@@ -52,7 +52,8 @@ export const CartProvider = ({ children }) => {
                     quantity: obj.quantity + duplicate.quantity,
                     price: obj.price,
                     img: obj.img,
-                    id: obj.id
+                    id: obj.id,
+                    stock: obj.stock
 
                 }
             );
@@ -65,7 +66,8 @@ export const CartProvider = ({ children }) => {
                     quantity: obj.quantity,
                     price: obj.price,
                     img: obj.img,
-                    id: obj.id
+                    id: obj.id,
+                    stock: obj.stock
                 }
             ]);
         }

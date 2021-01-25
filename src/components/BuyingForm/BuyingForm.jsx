@@ -35,12 +35,23 @@ const BuyingForm = () => {
     const [ error, setError ] = useState(false);
     
     const [loading, setLoading] = useState(false);
+    const [newId, setNewId] = useState();
 
     let history = useHistory();
 
-    useEffect(() => toasti() , []);
+    useEffect(() => motivationNotif() , []);
 
-    const toasti = () => {toast('Estas a solo un paso!! Completa los datos para coordinar la entrega del producto!!', {
+
+    const motivationNotif = () => {toast('Estas a solo un paso!! Completa los datos para coordinar la entrega del producto!!', {
+        position: "bottom-left",
+        autoClose: 7500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined
+    })};
+    const purchaseNotif = () => {toast('Compra realizada con exito!!El codigo de pedido resaltado es el mas reciente', {
         position: "bottom-left",
         autoClose: 7500,
         hideProgressBar: false,
@@ -54,29 +65,22 @@ const BuyingForm = () => {
 
     const updateStocks = () => {
 
-        const docRefs = cart.map( ({id}) => {
+        const db = getFirestore()
+        const itemCollection =  db.collection('items');
+        const bache = db.batch()
 
-            return getFirestore().collection("items").doc(id).get();
+        cart.forEach( item => {
+
+            console.log(item)
+            bache.update(itemCollection.doc(item.id),{stock: item.stock - item.quantity})
         })
-        
-        Promise.all(docRefs)
-        .then(docRefs => {
 
-            docRefs.forEach(docRef => 
-
-
-            // TRABADO ACA OBTENGO LA REFERENCIA DE CADA PRODUCTO A COMPRAR PERO NO PUEDO ACTUALIZAR EL STOCCK
-
-            // PROBAR BATCH UPDATE
-            
-                console.log(docRef)
-            )
-
-    
-            // docRef.update({
-            //     stock: qty
-            // })
+        bache
+        .commit()
+        .then(()=> {
+            console.log("Bache ok")
         })
+        .catch(e => console.log(e))
 
     }
 
@@ -108,12 +112,13 @@ const BuyingForm = () => {
             
 
             const db = getFirestore();
-            const orders = db.collection("orders");
+            const ordersCollection = db.collection("orders");
 
-            orders
+            ordersCollection
             .add(order)
             .then( ({ id }) =>{
-                setOrderIds( [ ...orderIds, { id }] ) 
+                setOrderIds( [ ...orderIds, { id }] );
+                setNewId(id);
             })
             .catch(err => {
                 setError(err);
@@ -121,7 +126,8 @@ const BuyingForm = () => {
             .finally(()=>{
                 
                 updateStocks();
-                history.push("/my-orders");
+                purchaseNotif();
+                newId !== '' && history.push("/my-orders");
             })
         }
     };
@@ -130,7 +136,9 @@ const BuyingForm = () => {
     return (
 
         cart.length === 0  && loading === false ? (
+
             <NotExists title={"Ooops!!! no deberias estar aca si no tenes productos que comprar"}/>
+
         ): (
             
                 <div className="buy-form-container">

@@ -95,6 +95,10 @@
   min-height: 48px;
 }
 
+.orders-container .orders-organizer .orders .order-row:first-child .id {
+  background-color: #E0FF00;
+}
+
 .orders-container .orders-organizer .orders .order-row .order-info {
   width: 25%;
   text-align: center;
