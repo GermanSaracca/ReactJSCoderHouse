@@ -10,6 +10,7 @@ nav .nav-wrapper {
   background-color: #373F47;
   padding: 0px 30px;
   border-bottom: solid 4px #E0FF00;
+  height: 10vh;
 }
 
 nav .nav-wrapper .brand-logo {
@@ -28,7 +29,11 @@ nav .nav-wrapper ul {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  width: 40%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 35%;
+  height: 100%;
   margin-right: 5vw;
 }
 
@@ -43,6 +48,20 @@ nav .nav-wrapper ul li .navlink:hover {
 nav .nav-wrapper ul li .active {
   color: #E0FF00;
   background-color: rgba(0, 0, 0, 0.097);
+}
+
+nav .nav-wrapper ul li .material-icons {
+  font-size: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 9vh;
 }
 
 .sidenav {

@@ -20,9 +20,7 @@ const ItemDetail = ({item}) => {
         setLiked(!liked);
     }
 
-
-
-
+    
     return (
         <div className="item-detail">
             <div className="left-container">
@@ -79,6 +77,7 @@ const ItemDetail = ({item}) => {
                         </i>
                     </div>
                     <h4>${item.price}</h4>
+                    <p>STOCK: {item.stock}</p>
                     <small>COD: { item.id.slice(0,6)}</small>
                     <h6>{item.description}</h6>
                 </div>

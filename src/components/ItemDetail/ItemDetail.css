@@ -149,6 +149,11 @@
   border-radius: 4px;
 }
 
+.item-detail .right-container .title-price p {
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
 .item-detail .right-container .title-price small {
   background-color: #ffffff;
   padding: 3px;

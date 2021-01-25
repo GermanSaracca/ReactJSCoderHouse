@@ -52,7 +52,7 @@ const ItemDetailContainer = () => {
         )
     } else if(item === "not exist"){
         return(
-            <NotExists/>
+            <NotExists title={"Ooops!!! La página o producto que estas buscando no existe."}/>
         )
     } else {
         return(

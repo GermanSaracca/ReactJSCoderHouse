@@ -12,9 +12,10 @@
 
     color: $White;
     background-color: $DarkGray;
-    border: solid 2px $Gray;
     border-radius: 5px;
     line-height: 25px;
+    box-shadow: 0px 0px 4px 1px $Green;
+    padding: 15px;
 
     .Toastify__close-button {
         color: $Green;

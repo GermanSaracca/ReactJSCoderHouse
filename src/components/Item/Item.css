@@ -18,8 +18,8 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   background-color: #373F47;
-  -webkit-box-shadow: 0px 0px 4px 1px black;
-          box-shadow: 0px 0px 4px 1px black;
+  -webkit-box-shadow: 0px 0px 4px 1px #1f2226;
+          box-shadow: 0px 0px 4px 1px #1f2226;
   border-radius: 3px;
   width: auto;
   max-width: 40vw;

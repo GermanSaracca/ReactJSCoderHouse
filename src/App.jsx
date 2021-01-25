@@ -13,6 +13,7 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer.jsx';
 import Cart from './components/Cart/Cart';
 import BuyingForm from './components/BuyingForm/BuyingForm.jsx';
+import MyOrders from './components/MyOrders/MyOrders.jsx';
 
 //Librerias
 import { toast } from 'react-toastify';
@@ -28,6 +29,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 //Css particular
 import './components/assets/styles/app.css'
+
 
 
 
@@ -63,6 +65,7 @@ const App = () => {
                     <Route path="/item/:id" component={ItemDetailContainer}/>
                     <Route path="/cart" component={Cart}/>
                     <Route path="/order" component={BuyingForm}/>
+                    <Route path="/my-orders" component={MyOrders}/>
                 </Switch>
             </CartProvider>
         </Router>

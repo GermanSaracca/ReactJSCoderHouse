@@ -25,7 +25,10 @@ const NavBar = () => {
                             <NavLink to="/categories/gaming" className="navlink"> Gaming </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/wishlist" className="navlink"> Mi lista de deseos </NavLink>
+                            <NavLink to="/wishlist" className="navlink material-icons"> favorite </NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/my-orders" className="navlink material-icons" title="mis compras"> format_list_bulleted </NavLink>
                         </li>
                     </ul>
                     {/* Icono de carrito de compras */}
@@ -41,7 +44,10 @@ const NavBar = () => {
                     <NavLink to="/categories/gaming" className="navlink"> Gaming </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/wishlist" className="navlink"> Mi lista de deseos </NavLink>
+                    <NavLink to="/wishlist" className="navlink material-icons"> favorite </NavLink>
+                </li>
+                <li>
+                    <NavLink to="/my-orders" className=" navlink material-icons" title="mis compras"> format_list_bulleted </NavLink>
                 </li>
             </ul>
         </>

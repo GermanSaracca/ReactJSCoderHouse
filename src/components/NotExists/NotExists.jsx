@@ -4,12 +4,12 @@ import { BiCommentError } from 'react-icons/bi';
 //Particular Css
 import './NotExists.css'
 
-const NotExists = () => {
+const NotExists = ({title}) => {
     return (
         <>
             <div className="not-exist-item">
                 <BiCommentError className="coment-error"/>
-                <h4>Ooops!!! La página o producto <br/> que estas buscando no existe.</h4>
+                <h4>{title}</h4>
             </div>
         </>
     )

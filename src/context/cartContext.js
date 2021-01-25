@@ -13,18 +13,25 @@ export const CartProvider = ({ children }) => {
             return [];
         }
     };
+    const ordersInLocal = () => {
+
+        if (localStorage.getItem('my-orders') !== null) {
+
+            return JSON.parse(localStorage.getItem('my-orders'))
+        }else {
+            return [];
+        }
+    };
 
     const [cart,setCart] = useState(  itemsInLocal  );
     const [items,setItems] = useState(0);
     const [total,setTotal] = useState(0);
-    const [orderId, setOrderId] = useState();
+    const [orderIds, setOrderIds] = useState(ordersInLocal);
  
-
-
-
     useEffect(() => {
         updateItems();
         localStorage.setItem('cart',JSON.stringify(cart));
+        localStorage.setItem('my-orders',JSON.stringify(orderIds));
         getTotal();
     });
 
@@ -91,7 +98,20 @@ export const CartProvider = ({ children }) => {
     };
     
     return(
-        <CartContext.Provider value={[ addToCart, isInCart, cart, setCart, items ,updateItems, total, deleteItem, orderId, setOrderId,itemsInLocal ]}>
+        <CartContext.Provider value={[ 
+            addToCart, 
+            isInCart, 
+            cart, 
+            setCart,
+            items ,
+            updateItems,
+            total, 
+            deleteItem,
+            orderIds,
+            setOrderIds,
+            itemsInLocal, 
+            ordersInLocal 
+            ]}>
             {children}
         </CartContext.Provider>
     )

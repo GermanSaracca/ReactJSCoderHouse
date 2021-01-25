@@ -21,6 +21,7 @@
         background-color: $Black;
         box-shadow: 0px 0px 8px 3px $Green;
         border-radius: 5px;
+        padding: 10px 0;
 
         .input-field {
             width: 85%;
@@ -60,6 +61,9 @@
             }
             .prefix.active {
                 color:$Green;
+            }
+            small {
+                color: red;
             }
 
         }
