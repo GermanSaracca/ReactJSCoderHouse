@@ -302,35 +302,11 @@
             align-items: center;
     text-align: center;
     width: 90%;
+    padding-top: 10px;
   }
-  .item-detail .right-container .title-price .wrapper-title-favorite {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: auto;
-    padding: 10px;
-  }
-  .item-detail .right-container .title-price .wrapper-title-favorite .item-name {
+  .item-detail .right-container .title-price .item-name {
     color: #ffffff;
     margin: 0;
-  }
-  .item-detail .right-container .title-price .wrapper-title-favorite .favorite {
-    font-size: 32px;
-    cursor: pointer;
-    margin-left: 10px;
-    color: #ffffff;
-    -webkit-transition: .3s all;
-    transition: .3s all;
-  }
-  .item-detail .right-container .title-price .wrapper-title-favorite .favorite:hover {
-    -webkit-transform: scale(1.3);
-            transform: scale(1.3);
   }
   .item-detail .right-container .title-price h4:nth-child(2) {
     background-color: #373F47;

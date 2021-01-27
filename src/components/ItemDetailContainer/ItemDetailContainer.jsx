@@ -5,7 +5,6 @@ import ItemDetail from '../ItemDetail/ItemDetail';
 import Loader from '../Loader/Loader';
 import NotExists from '../NotExists/NotExists';
 
-
 //Hooks
 import {useParams} from 'react-router-dom';
 
@@ -13,13 +12,12 @@ import {useParams} from 'react-router-dom';
 import { getFirestore } from '../../firebase/firebaseConfig';
 
 
-
 const ItemDetailContainer = () => {
 
     const [item, setItem ] = useState([]);
     const [loading, setLoading ] = useState(true);
 
-    const {id} = useParams();
+    const {id} = useParams();//Utilizo el id de la ruta actual para saber que componente buscar y mostrar su detalle
 
 
     useEffect(() => {

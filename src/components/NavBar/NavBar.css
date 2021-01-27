@@ -50,20 +50,6 @@ nav .nav-wrapper ul li .active {
   background-color: rgba(0, 0, 0, 0.097);
 }
 
-nav .nav-wrapper ul li .material-icons {
-  font-size: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 9vh;
-}
-
 .sidenav {
   background-color: #E0FF00;
 }

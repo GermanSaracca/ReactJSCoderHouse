@@ -1,6 +1,6 @@
 import React,{useState,createContext,useEffect} from 'react';
 
-export const CartContext = createContext([]);
+export const CartContext = createContext({});
 
 export const CartProvider = ({ children }) => {
 
@@ -29,10 +29,12 @@ export const CartProvider = ({ children }) => {
     const [orderIds, setOrderIds] = useState(ordersInLocal);
  
     useEffect(() => {
+
         updateItems();
         localStorage.setItem('cart',JSON.stringify(cart));
         localStorage.setItem('my-orders',JSON.stringify(orderIds));
         getTotal();
+        
     });
 
 
@@ -75,11 +77,8 @@ export const CartProvider = ({ children }) => {
 
     const isInCart = (itemName)=> {
         const isIn = cart.find(product => product.item === itemName);
-        if(isIn !== undefined){
-            return true;
-        } else {
-            return false;
-        }
+
+        return isIn;
     };
 
     const updateItems = ()=>{
@@ -100,7 +99,7 @@ export const CartProvider = ({ children }) => {
     };
     
     return(
-        <CartContext.Provider value={[ 
+        <CartContext.Provider value={{
             addToCart, 
             isInCart, 
             cart, 
@@ -113,7 +112,7 @@ export const CartProvider = ({ children }) => {
             setOrderIds,
             itemsInLocal, 
             ordersInLocal 
-            ]}>
+            }}>
             {children}
         </CartContext.Provider>
     )

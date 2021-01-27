@@ -22,8 +22,7 @@ const CartItem = ({item, quantity, price, img , deleteItem }) => {
                 </div>
                 <div className="item-totalValue item">
                     $ {quantity * price}
-                </div>
-                
+                </div> 
             </div>
             <hr/> 
         </>

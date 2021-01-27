@@ -207,30 +207,14 @@
                 align-items: center;
                 text-align: center;
                 width: 90%;
+                padding-top: 10px;
 
-                .wrapper-title-favorite {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    width: auto;
-                    padding: 10px;
 
-                    .item-name {
-                        color: $White;
-                        margin: 0;
-                    }
-                    .favorite{
-                        font-size: 32px;
-                        cursor: pointer;
-                        margin-left: 10px;
-                        color: $White;
-                        transition: .3s all;
-
-                        &:hover {
-                            transform: scale(1.3);
-                        }
-                    }
+                .item-name {
+                    color: $White;
+                    margin: 0;
                 }
+
     
                 h4{
     

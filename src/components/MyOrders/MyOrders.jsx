@@ -13,11 +13,11 @@ import { getFirestore } from '../../firebase/firebaseConfig';
 import Loader from '../Loader/Loader';
 
 //Css particular
-import './MyOrders.css'
+import './MyOrders.css';
 
 const MyOrders = () => {
 
-    const [ ,,,,,,,, orderIds ,setOrderIds,,] = useContext(CartContext);
+    const { orderIds ,setOrderIds } = useContext(CartContext);
 
     const [ ordersInfo, setOrdersInfo ] = useState([]);
     const [ loading, setLoading ] = useState(true);
@@ -25,31 +25,39 @@ const MyOrders = () => {
 
     useEffect(() => {
 
+        let isMounted = true;
+
         const db = getFirestore();
 
         // En "getOrders", "itemRefs" devuelve una promesa del documento especifico por cada id de compra que hay en el array de ids "orderIds".
         // Luego voy a esperar que se resuelvan todas esas promesas con un Promise.All y ahi si llamar a setOrdersInfo para guardar la informacion.
+        if (isMounted) {
+            const getOrders = (orderIds, setOrdersInfo) => {
 
-        const getOrders = (orderIds, setOrdersInfo) => {
+                let itemRefs = orderIds.map( ({id}) => {
+                    return db.collection('orders').doc(id).get();
+                });
+        
+                Promise.all(itemRefs)
+                .then(docs => {
+        
+                    let items = docs.map(doc => ({id: doc.id, ...doc.data() } ) );
+                    //Reverse para que la ultima compra figure arriba
+                    setOrdersInfo(items.reverse())
+                })
+                .catch(e => console.log(e))
+                .finally(()=>{
+                    setLoading(false)
+                })
+        
+            };
+            getOrders( orderIds, setOrdersInfo);
 
-            let itemRefs = orderIds.map( ({id}) => {
-                return db.collection('orders').doc(id).get();
-            });
-    
-            Promise.all(itemRefs)
-            .then(docs => {
-    
-                let items = docs.map(doc => ({id: doc.id, ...doc.data() } ) );
-                //Reverse para que la ultima compra figure arriba
-                setOrdersInfo(items.reverse())
-            })
-            .catch(e => console.log(e))
-            .finally(()=>{
-                setLoading(false)
-            })
-    
-        };
-        getOrders( orderIds, setOrdersInfo);
+            return () => {
+                isMounted = false; 
+            };
+        }
+
 
     }, [orderIds]);
 
@@ -102,7 +110,7 @@ const MyOrders = () => {
                                             <ul>
                                             {
                                                 items &&
-                                                items.map(item => <li className="truncate" key= {item.id}>-{item.item}</li> )
+                                                items.map(item => <li className="truncate" key= {item.id} > {item.qty} x {item.item} </li> )
                                             }
                                             </ul>
                                         </div>

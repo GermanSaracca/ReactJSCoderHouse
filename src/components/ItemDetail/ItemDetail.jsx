@@ -14,13 +14,8 @@ const ItemDetail = ({item}) => {
 
     const [ bigImg, setBigImg ] = useState('');
     const [ isAdded, setIsAdded ] = useState(false);
-    const [liked, setLiked] = useState(false);
 
-    const likedItem = () => {
-        setLiked(!liked);
-    }
 
-    
     return (
         <div className="item-detail">
             <div className="left-container">
@@ -66,14 +61,8 @@ const ItemDetail = ({item}) => {
             </div>
             <div className="right-container">
                 <div className="title-price">
-                    <div className="wrapper-title-favorite">
-                        <h4 className="item-name">{item.name}</h4>
-                        &nbsp;
-                        &nbsp;
-                        <i onClick={likedItem} className="material-icons favorite">
-                            {liked ? 'favorite' : 'favorite_border'}
-                        </i>
-                    </div>
+ 
+                    <h4 className="item-name">{item.name}</h4>
                     <h4>${item.price}</h4>
                     <p>STOCK: {item.stock}</p>
                     <small>COD: { item.id.slice(0,6)}</small>

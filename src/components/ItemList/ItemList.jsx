@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 //Components
-import Item from '../Item/Item'
+import Item from '../Item/Item';
 
 //Particular CSS
-import './ItemList.css'
+import './ItemList.css';
 
 const ItemList = ({ items }) => {
 

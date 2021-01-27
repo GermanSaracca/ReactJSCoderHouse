@@ -27,18 +27,18 @@
         margin-bottom: 5px;
         background-color: $DarkGray;
         border-radius: 2px;
-        padding: 0 2px;
+        // padding:  2px;
 
         .counter-btn {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 2rem;
-            height: 2rem;
+            width: 1.9rem;
+            height: 1.9rem;
             border: none;
             cursor: pointer;
             background-color: unset;
-            box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.467);
+            box-shadow: 0px 0px 3px 2px $Green;
 
 
             p{

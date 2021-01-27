@@ -2,19 +2,20 @@ import React,{useContext} from 'react';
 
 //CSS particular
 import './Cart.css';
+
 //Context
 import {CartContext} from '../../context/cartContext';
+
 //Routing
 import { Link } from 'react-router-dom';
 
 //Components
 import CartItem from '../CartItem/CartItem';
 
+
 const Cart = () => {
 
-    const contextCart = useContext(CartContext);
-    const [ , ,cart, , , ,total,deleteItem] = contextCart;
-
+    const { cart, total, deleteItem}= useContext(CartContext);
 
     if (cart.length !== 0) {
 

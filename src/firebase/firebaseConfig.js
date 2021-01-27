@@ -4,13 +4,16 @@ import firebase from 'firebase/app';
 import '@firebase/firestore';
 import '@firebase/auth';
 
+require("dotenv").config()
+
+
 const app = firebase.initializeApp({
-    apiKey: "AIzaSyBTYgf6ul4ubRdZfOXW-l5JVxOYVx2nGDw",
-    authDomain: "coderhouse-ecommerce-ef2fe.firebaseapp.com",
-    projectId: "coderhouse-ecommerce-ef2fe",
-    storageBucket: "coderhouse-ecommerce-ef2fe.appspot.com",
-    messagingSenderId: "128304735942",
-    appId: "1:128304735942:web:3e98bfc63ebfb6c5e8d9c7"
+    apiKey: `${ process.env.REACT_APP_API_KEY }` ,
+    authDomain: `${ process.env.REACT_APP_AUTH_DOMAIN }` ,
+    projectId: `${ process.env.REACT_APP_PROJECT_ID }` ,
+    storageBucket: `${ process.env.REACT_APP_STORAGE_BUCKET }` ,
+    messagingSenderId: `${ process.env.REACT_APP_MESSAGING_SENDER_ID }` ,
+    appId: `${ process.env.REACT_APP_APP_ID }`
 });
 
 export const getFirebase = () => {

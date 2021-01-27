@@ -2,9 +2,7 @@
 
 
 <p>
-Proyecto realizado en ReactJs y conectado a Firebase. Todos los productos se encuentran alojados en Firestore y las ordenes
-<br>
-generadas se guardan ahi tambien. 
+Proyecto realizado en ReactJs y conectado a Firebase. Todos los productos se encuentran alojados en Firestore y las ordenes generadas se guardan ahi tambien. 
 <br>
 El sitio muestra en la homepage solo 10 productos principalmente. 
 <br>
@@ -44,7 +42,6 @@ Tambien utilice BrowserRouter, Switch y Route junto con Links y Navlinks para el
 <h3>Librerias externas utilizadas en este proyecto:</h3>
 <ul>
     <li>Materialize como UI framework.</li>
-    <li>React-materialize</li>
     <li>React-Icons</li>
     <li>React-toastify para notificaciones push</li>
     <li>React-router-dom para navegacion</li>

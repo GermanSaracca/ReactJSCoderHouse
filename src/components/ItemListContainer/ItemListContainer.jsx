@@ -15,31 +15,41 @@ import './ItemListContainer.css'
 
 const ItemListContainer = () => {
 
-
-    const {categoryId} = useParams();
+    const {categoryId} = useParams();//Categoria definida en ruta para saber que productos filtrar
 
     const [items, setItems] = useState([]);
     
 
     useEffect(() => {
 
+        let isMounted = true;
+
         const db = getFirestore();
         const itemCollection = db.collection("items");
 
         itemCollection.get().then(( querySnapshot ) => {
 
-            if(querySnapshot.size === 0 ) {
-                console.log('No results!')
-            }
+            if(isMounted){
 
-            const documents = querySnapshot.docs.map( doc => ( {id: doc.id, ...doc.data()} ) )
-            setItems( documents ) ;
+                if(querySnapshot.size === 0 ) {
+                    console.log('No results!')
+                }
+    
+                const documents = querySnapshot.docs.map( doc => ( {id: doc.id, ...doc.data()} ) )
+                setItems( documents ) ;
+            }
         })
         .catch(err => {
             console.log('Error searching items', err );
         });
 
+        return () => {
+            isMounted = false; 
+        };
+
     },[]);
+
+
 
     if (items.length > 0){
 

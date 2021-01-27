@@ -15,7 +15,6 @@ const TechInfo = ({item}) => {
 
                         <li key={key}>{key.toUpperCase()}<span className="span">{ value }</span></li> 
                     )
-
                 }
             </ul>
         </div>

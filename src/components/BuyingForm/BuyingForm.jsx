@@ -28,7 +28,7 @@ import './BuyingForm.css';
 
 const BuyingForm = () => {
 
-    const [ , ,cart, setCart, , ,total, , orderIds , setOrderIds, itemsInLocal] = useContext(CartContext);
+    const { cart, setCart, total, orderIds, setOrderIds, itemsInLocal } = useContext(CartContext);
 
     const { register, handleSubmit, watch, errors } = useForm();
     const email = watch("email");
@@ -39,6 +39,7 @@ const BuyingForm = () => {
     const [ error, setError ] = useState(false);
     
     const [loading, setLoading] = useState(false);
+    //Este state controla que se haya generado una id de compra
     const [newId, setNewId] = useState();
 
     let history = useHistory();
@@ -66,7 +67,7 @@ const BuyingForm = () => {
     })};
     toast.configure();
     
-
+    //Funcion para actualizr los stocks en firestore de los productos recien comprados
     const updateStocks = () => {
 
         const db = getFirestore()
@@ -75,7 +76,6 @@ const BuyingForm = () => {
 
         cart.forEach( item => {
 
-            console.log(item)
             bache.update(itemCollection.doc(item.id),{stock: item.stock - item.quantity})
         })
 
@@ -89,7 +89,6 @@ const BuyingForm = () => {
     }
 
     const handleOrder = (data)=> {
-
 
         if (data) {
 
@@ -114,7 +113,6 @@ const BuyingForm = () => {
             localStorage.removeItem('cart');
             setCart( itemsInLocal );
             
-
             const db = getFirestore();
             const ordersCollection = db.collection("orders");
 
@@ -168,14 +166,14 @@ const BuyingForm = () => {
                     <div className="input-field">
                         <i className="material-icons prefix">account_circle</i>
                         <input 
-                        name="lastname" 
-                        id="lastname" 
-                        type="text" 
-                        className="validate" 
-                        autoComplete="none" 
-                        ref={register({
-                            required: "Ingresar apellido", minLength: {value:2, message:"Minimo 2 caracteres"}, maxLength: {value:12, message:"Maximo 12 caracteres"}
-                        })}
+                            name="lastname" 
+                            id="lastname" 
+                            type="text" 
+                            className="validate" 
+                            autoComplete="none" 
+                            ref={register({
+                                required: "Ingresar apellido", minLength: {value:2, message:"Minimo 2 caracteres"}, maxLength: {value:12, message:"Maximo 12 caracteres"}
+                            })}
                         />
                         <label htmlFor="lastname" >Apellido</label>
                         { errors.lastname && <small>{ errors.lastname.message }</small> }
@@ -184,16 +182,16 @@ const BuyingForm = () => {
                     <div className="input-field">
                         <i className="material-icons prefix">phone</i>
                         <input 
-                        name="telephone" 
-                        id="telephone" 
-                        type="tel" 
-                        className="validate"
-                        autoComplete="none" 
-                        ref={register({
-                            required: "Ingrese su numero", pattern: {
-                                value: /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/, message:"Ingrese un numero valido"
-                            } 
-                        })}
+                            name="telephone" 
+                            id="telephone" 
+                            type="tel" 
+                            className="validate"
+                            autoComplete="none" 
+                            ref={register({
+                                required: "Ingrese su numero", pattern: {
+                                    value: /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/, message:"Ingrese un numero valido"
+                                } 
+                            })}
                         />
                         <label htmlFor="telephone">Telefono/Celular</label>
                         { errors.telephone && <small>{ errors.telephone.message }</small> }
@@ -202,16 +200,16 @@ const BuyingForm = () => {
                     <div className="input-field">
                         <i className="material-icons prefix">email</i>
                         <input 
-                        name="email" 
-                        id="email" 
-                        type="email" 
-                        className="validate" 
-                        autoComplete="none"
-                        ref={register({
-                            required: "Ingrese un email", pattern:{ 
-                                value:/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/ , message: "Ingrese un email valido"
-                            } 
-                        })} 
+                            name="email" 
+                            id="email" 
+                            type="email" 
+                            className="validate" 
+                            autoComplete="none"
+                            ref={register({
+                                required: "Ingrese un email", pattern:{ 
+                                    value:/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/ , message: "Ingrese un email valido"
+                                } 
+                            })} 
                         />
                         <label htmlFor="email">Email</label>
                         { errors.email && <small>{ errors.email.message }</small> }
@@ -220,21 +218,21 @@ const BuyingForm = () => {
                     <div className="input-field">
                         <i className="material-icons prefix">email</i>
                         <input 
-                        name="confirmEmail" 
-                        id="confirmEmail" 
-                        type="email" 
-                        className="validate" 
-                        autoComplete="none"
-                        ref={register({
-                            required: "Ingrese un email", pattern:{ 
-                                value:/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/ , message: "Ingrese un email valido"
-                            } 
-                        })} 
-                        onBlur = { ()=> confirmEmail !== email ? setPassErr(true) : setPassErr(false)}
-                        onChange = { ()=> confirmEmail === email && setPassErr(false) }
+                            name="confirmEmail" 
+                            id="confirmEmail" 
+                            type="email" 
+                            className="validate" 
+                            autoComplete="none"
+                            ref={register({
+                                required: "Ingrese un email", pattern:{ 
+                                    value:/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/ , message: "Ingrese un email valido"
+                                } 
+                            })} 
+                            onBlur = { ()=> confirmEmail !== email ? setPassErr(true) : setPassErr(false)}
+                            onChange = { ()=> confirmEmail === email && setPassErr(false) }
                         />
                         <label htmlFor="confirmEmail">Confirmar Email</label>
-                        { passErr && <small>{ "Sus contraseñas son diferentes"}</small> }
+                        { passErr && <small>{ "Sus emails son diferentes"}</small> }
                     </div>
 
                     {/* Unica forma de que los autocomplete "none" funcionen fue agregando autoComplete = "none" a todos los inputs
@@ -265,7 +263,6 @@ const BuyingForm = () => {
                                 Finalizar compra
                             </button>
                         )
-
                     }
 
                 </form>

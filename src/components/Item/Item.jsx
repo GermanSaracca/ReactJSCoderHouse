@@ -1,15 +1,13 @@
-import React from 'react'
+import React from 'react';
 
 //Particular CSS
-import './Item.css'
+import './Item.css';
 
 //Routing
 import { Link } from 'react-router-dom';
 
 
 const Item = ({ id, name, price, pictureUrl }) => {
-
-
 
     return (
         <Link to={`/item/${id}`} >

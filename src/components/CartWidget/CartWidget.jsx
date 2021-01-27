@@ -1,18 +1,18 @@
-import React,{useContext} from 'react'
+import React,{useContext} from 'react';
 
 //Routing
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 //Context
 import {CartContext} from '../../context/cartContext';
 
 //Particular CSS
-import './CartWidget.css'
+import './CartWidget.css';
+
 
 const CartWidget = () => {
 
-    const contextCart = useContext(CartContext);
-    const [ , , , ,items] = contextCart;
+    const { items }= useContext(CartContext);
 
     return (
         <>  
@@ -28,7 +28,6 @@ const CartWidget = () => {
             </div>
         </>
     )
-
 
 }
 
