@@ -39,14 +39,15 @@ Utilice hooks de:
 Tambien utilice BrowserRouter, Switch y Route junto con Links y Navlinks para el Routing.
 </p>
 
+
 <hr>
 <h3>Librerias externas utilizadas en este proyecto:</h3>
 <ul>
-    <li>Materialize como UI framework. -- **[materialize-css](https://www.npmjs.com/package/@materializecss/materialize)** </li>
-    <li>React-Icons. -- **[react-icons] (https://www.npmjs.com/package/react-icons)**</li>
-    <li>React-toastify para notificaciones push. -- **[react-toastify](https://www.npmjs.com/package/react-toastify)**</li>
-    <li>React-router-dom para navegacion. -- **[react-router-dom](https://www.npmjs.com/package/react-router-dom)**</li>
-    <li>React-hook-form para validacion de formularios. -- **[react-hook-form](https://www.npmjs.com/package/react-hook-form)**</li>
-    <li>Luxon para formateo de fechas. -- **[luxon](https://www.npmjs.com/package/luxon)**</li>
+    <li>Materialize como UI framework. -- https://www.npmjs.com/package/@materializecss/materialize </li>
+    <li>React-Icons. -- https://www.npmjs.com/package/react-icons</li>
+    <li>React-toastify para notificaciones push. -- https://www.npmjs.com/package/react-toastify</li>
+    <li>React-router-dom para navegacion. -- https://www.npmjs.com/package/react-router-dom</li>
+    <li>React-hook-form para validacion de formularios. -- https://www.npmjs.com/package/react-hook-form</li>
+    <li>Luxon para formateo de fechas. -- https://www.npmjs.com/package/luxon</li>
 </ul>
 
