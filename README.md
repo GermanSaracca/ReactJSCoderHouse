@@ -1,6 +1,6 @@
 <h1>Proyecto integrador E-Commerce - Curso de React JS de CoderHouse</h1>
 
-
+<h3>https://coderhouse-ecommerce-ef2fe.web.app/</h3>
 <p>
 Proyecto realizado en ReactJs y conectado a Firebase. Todos los productos se encuentran alojados en Firestore y las ordenes generadas se guardan ahi tambien. 
 <br>
@@ -33,6 +33,7 @@ Utilice hooks de:
         <li>useParams</li>
         <li>useHistory</li>
         <li>useContext</li>
+        <li>useCallback</li>
     </ul>
 
 Tambien utilice BrowserRouter, Switch y Route junto con Links y Navlinks para el Routing.
@@ -41,11 +42,11 @@ Tambien utilice BrowserRouter, Switch y Route junto con Links y Navlinks para el
 <hr>
 <h3>Librerias externas utilizadas en este proyecto:</h3>
 <ul>
-    <li>Materialize como UI framework.</li>
-    <li>React-Icons</li>
-    <li>React-toastify para notificaciones push</li>
-    <li>React-router-dom para navegacion</li>
-    <li>React-hook-form para validacion de formularios</li>
-    <li>Luxon para formateo de fechas</li>
+    <li>Materialize como UI framework. -- **[materialize-css](https://www.npmjs.com/package/@materializecss/materialize)** </li>
+    <li>React-Icons. -- **[react-icons] (https://www.npmjs.com/package/react-icons)**</li>
+    <li>React-toastify para notificaciones push. -- **[react-toastify](https://www.npmjs.com/package/react-toastify)**</li>
+    <li>React-router-dom para navegacion. -- **[react-router-dom](https://www.npmjs.com/package/react-router-dom)**</li>
+    <li>React-hook-form para validacion de formularios. -- **[react-hook-form](https://www.npmjs.com/package/react-hook-form)**</li>
+    <li>Luxon para formateo de fechas. -- **[luxon](https://www.npmjs.com/package/luxon)**</li>
 </ul>
 
