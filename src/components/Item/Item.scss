@@ -15,13 +15,13 @@
     background-color: $DarkGray;
     box-shadow: 0px 0px 4px 1px $Black;
     border-radius: 3px;
-    width: auto;
-    max-width: 40vw;
-    height: auto;
-    max-height: fit-content;
     overflow: hidden;
     cursor: pointer;
     transition: .3s all;
+    width: auto;
+    max-width: 45vw;
+    height: auto;
+    max-height: fit-content;
 
     &:hover{
         transform: scale(1.01);
@@ -31,31 +31,21 @@
     .img-container{
         img{
             width: 100%;
-            height: 25vh;
+            height: 150px;
             user-select: none;
         }
     }
     .info-container{
         display: flex;
         flex-direction: column;
-        padding: 0px 10px 5px 10px;
-
-        .id-code{
-            color: $Green;
-            text-align: center;
-            font-size: 11px;
-        }
+        padding: 5px 10px;
+        color: $White;
 
         .title{
-            font-size: 12px;
-            color: $White;
             text-align: center;
             white-space: nowrap;
         }
-
         .price {
-            font-size: 14px;
-            color: $White;
             text-align: end;
         }
     }
@@ -65,75 +55,21 @@
 @media screen and (min-width:540px){
     .card-container{
         max-width: 30vw;
-        max-height: fit-content;
-
-        .img-container{
-            img{
-                height: 30vh;
-            }
-        }
     }   
 }
+
 @media screen and (min-width:740px){
     .card-container{
-        .img-container{
-            img{
-                height: 25vh;
-            }
-        }
-    }   
-}
-@media screen and (min-width:840px){
-    .card-container{
-        max-width: 28vw;
-
-        .img-container{
-            img{
-                height: 30vh;
-                user-select: none;
-            }
-        }
-        .info-container{
-
-            .title{
-                font-size: 14px;
-            }
-            .price {
-                font-size: 22px;
-            }
-        }
-    }   
-}
-@media screen and (min-width:940px){
-    .card-container{
         max-width: 22vw;
-
-        .img-container{
-            img{
-                height: 17vh;
-                user-select: none;
-            }
-        }
-
-        .info-container{
-
-            .title{
-                font-size: 14px;
-            }
-            .price {
-                font-size: 22px;
-            }
-        }
     }   
 }
-@media screen and (min-width:1040px){
+@media screen and (min-width:1020px){
     .card-container{
-        width: 250px;
-        height: 250px;
+        max-width: 17vw;
 
         .img-container{
             img{
-                height: 180px;
+                height: 175px;
             }
         }
     }   

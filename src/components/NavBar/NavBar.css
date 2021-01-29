@@ -8,18 +8,25 @@
 
 nav .nav-wrapper {
   background-color: #373F47;
-  padding: 0px 30px;
+  padding: 0px 20px;
   border-bottom: solid 4px #E0FF00;
-  height: 10vh;
+  height: 70px;
 }
 
 nav .nav-wrapper .brand-logo {
   color: #E0FF00;
+  font-size: 1.2rem;
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (min-width: 420px) {
   nav .nav-wrapper .brand-logo {
-    font-size: 18px;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 520px) {
+  nav .nav-wrapper .brand-logo {
+    font-size: 2rem;
   }
 }
 
@@ -27,18 +34,22 @@ nav .nav-wrapper ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 35%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   height: 100%;
   margin-right: 5vw;
 }
 
 nav .nav-wrapper ul li .navlink {
   font-size: 16px;
+  margin: 0 1vw;
 }
 
 nav .nav-wrapper ul li .navlink:hover {

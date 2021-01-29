@@ -14,11 +14,12 @@
           align-items: center;
   background-color: #7A7A7A;
   width: 100%;
-  height: 90vh;
+  height: 95vh;
+  padding: 0 5vw;
 }
 
 .cart-container .cart, .cart-container-empty .cart {
-  width: 70vw;
+  width: 100%;
   -webkit-box-shadow: 0px 0px 4px 3px #1f2226;
           box-shadow: 0px 0px 4px 3px #1f2226;
   border-radius: 5px;
@@ -51,7 +52,7 @@
 }
 
 .cart-container .cart .cart-items, .cart-container-empty .cart .cart-items {
-  height: 60vh;
+  min-height: 40vh;
   background-color: #ffffff;
   overflow-y: auto;
   overflow-x: hidden;
@@ -72,23 +73,53 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0px 25px;
+  padding: 0 5px;
   height: 7vh;
   background-color: #373F47;
 }
 
+@media screen and (min-width: 540px) {
+  .cart-container .cart .cart-total, .cart-container-empty .cart .cart-total {
+    padding: 0 25px;
+  }
+}
+
 .cart-container .cart .cart-total .total-amount, .cart-container-empty .cart .cart-total .total-amount {
-  font-size: 1.8vw;
   color: #ffffff;
   width: 50%;
   text-align: center;
+}
+
+@media screen and (min-width: 840px) {
+  .cart-container .cart .cart-total .total-amount, .cart-container-empty .cart .cart-total .total-amount {
+    font-size: 2rem;
+  }
 }
 
 .cart-container .cart .cart-total .btn, .cart-container-empty .cart .cart-total .btn {
   color: #373F47;
   font-weight: 600;
   background-color: #E0FF00;
-  width: 50%;
+  min-width: 50%;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 840px) {
+  .cart-container .cart .cart-total .btn, .cart-container-empty .cart .cart-total .btn {
+    font-size: .7rem;
+  }
 }
 
 .cart-container-empty {
@@ -98,10 +129,11 @@
 .cart-container-empty .empty-cart-title {
   color: #E0FF00;
   line-height: 50px;
+  text-align: center;
 }
 
 .cart-container-empty .empty-cart {
-  font-size: 10vw;
+  font-size: 10rem;
   color: #E0FF00;
 }
 

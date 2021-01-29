@@ -22,7 +22,7 @@ import { useHistory } from "react-router-dom";
 
 //Hook-Form
 import { useForm } from 'react-hook-form';
- 
+
 //Css particular
 import './BuyingForm.css';
 
@@ -139,8 +139,7 @@ const BuyingForm = () => {
 
         cart.length === 0  && loading === false ? (
 
-            <NotExists title={"Ooops!!! no deberias estar aca si no tenes productos que comprar"}/>
-
+            <NotExists title={"Sigue mirando nuestro productos!!"}/>
         ): (
             
                 <div className="buy-form-container">

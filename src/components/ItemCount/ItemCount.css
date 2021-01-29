@@ -38,6 +38,7 @@
   margin-bottom: 5px;
   background-color: #373F47;
   border-radius: 2px;
+  padding: 0 .3rem;
 }
 
 .item-counter .counter-container .counter-btn {

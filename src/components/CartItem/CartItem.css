@@ -23,7 +23,14 @@
 }
 
 .cart-item .item-name {
+  font-size: .8rem;
   white-space: wrap;
+}
+
+@media screen and (min-width: 540px) {
+  .cart-item .item-name {
+    font-size: 1rem;
+  }
 }
 
 .cart-item .item-img {

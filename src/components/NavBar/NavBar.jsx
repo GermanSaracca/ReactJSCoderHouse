@@ -35,7 +35,7 @@ const NavBar = () => {
                 </div>
             </nav>
             {/* Mismo menu pero cuando esta colapsado para mobile */}
-            <ul className="sidenav" id="mobile-demo">
+            <ul className="sidenav sidenav-close" id="mobile-demo" >
                 <li>
                     <NavLink to="/categories/computacion" className="navlink"> Computación </NavLink>
                 </li>

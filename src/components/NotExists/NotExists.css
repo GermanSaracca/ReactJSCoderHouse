@@ -27,4 +27,11 @@
   line-height: 50px;
   text-align: center;
 }
+
+.not-exist-item .backToLanding-btn {
+  color: #373F47;
+  font-weight: 600;
+  background-color: #E0FF00;
+  height: 10vh;
+}
 /*# sourceMappingURL=NotExists.css.map */

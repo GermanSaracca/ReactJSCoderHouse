@@ -18,7 +18,7 @@ const ItemDetail = ({item}) => {
 
     return (
         <div className="item-detail">
-            <div className="left-container">
+            <div className="container-one">
                 <div className="img-counter-container">
                     <div className="small-images-big-image-container">
                         <div className="small-images">
@@ -59,7 +59,7 @@ const ItemDetail = ({item}) => {
                     } 
                 </div>
             </div>
-            <div className="right-container">
+            <div className="container-two">
                 <div className="title-price">
  
                     <h4 className="item-name">{item.name}</h4>

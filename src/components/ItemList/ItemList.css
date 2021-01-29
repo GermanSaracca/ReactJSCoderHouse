@@ -12,52 +12,36 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
-  grid-row-gap: 5vw;
-  grid-column-gap: 5vw;
-  width: 90%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 @media screen and (min-width: 540px) {
   .ItemList {
-    -ms-grid-columns: auto auto auto;
-        grid-template-columns: auto auto auto;
-    grid-row-gap: 2vw;
-    grid-column-gap: 2vw;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2vw;
   }
 }
 
 @media screen and (min-width: 740px) {
   .ItemList {
-    -ms-grid-columns: auto auto auto;
-        grid-template-columns: auto auto auto;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
   }
 }
 
-@media screen and (min-width: 840px) {
+@media screen and (min-width: 1020px) {
   .ItemList {
-    -ms-grid-columns: auto auto auto;
-        grid-template-columns: auto auto auto;
-  }
-}
-
-@media screen and (min-width: 940px) {
-  .ItemList {
-    -ms-grid-columns: auto auto auto auto;
-        grid-template-columns: auto auto auto auto;
-  }
-}
-
-@media screen and (min-width: 1040px) {
-  .ItemList {
-    -ms-grid-columns: auto auto auto auto;
-        grid-template-columns: auto auto auto auto;
-    grid-row-gap: 3vw;
-    grid-column-gap: 3vw;
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
   }
 }
 /*# sourceMappingURL=ItemList.css.map */

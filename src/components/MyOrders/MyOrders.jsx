@@ -110,11 +110,11 @@ const MyOrders = () => {
                                             <ul>
                                             {
                                                 items &&
-                                                items.map(item => <li className="truncate" key= {item.id} > {item.qty} x {item.item} </li> )
+                                                items.map(item => <li className="truncate" key={item.id}> {item.qty} x {item.item} </li> )
                                             }
                                             </ul>
                                         </div>
-                                        <div className="order-info id"> { id } </div>
+                                        <div className="order-info id "> { id } </div>
                                         <div className="order-info total"> ${ total } </div>
                                     </div>
                                 )

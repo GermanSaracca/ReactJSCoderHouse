@@ -24,11 +24,11 @@ const Cart = () => {
                 <div className="cart">
                     <div className="cart-columns">
                         <p></p>
-                        <p>Imagen</p>
-                        <p>Nombre</p>
-                        <p>Cantidad</p>
-                        <p>Valor unitario</p>
-                        <p>Valor total</p>
+                        <p className="truncate">Imagen</p>
+                        <p className="truncate">Nombre</p>
+                        <p className="truncate">Cantidad</p>
+                        <p className="truncate">Valor unitario</p>
+                        <p className="truncate">Total</p>
                     </div>
                     <div className="cart-items">
                         {
@@ -39,7 +39,7 @@ const Cart = () => {
                     </div>
                     <div className="cart-total">
                         <p className="total-amount">
-                        Subtotal &nbsp;&nbsp; ${ total }
+                        Subtotal ${ total }
                         </p>
                         <Link to="/order" className="waves-effect btn">Finalizar compra</Link>
                     </div>

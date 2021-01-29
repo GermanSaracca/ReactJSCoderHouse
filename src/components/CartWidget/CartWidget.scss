@@ -9,17 +9,17 @@
 .cartwidget-container {
     position: absolute;
     top: 0;
-    right: 30px;
-
+    right: 20px;
+    height: 70px;
 
     .total-items {
         display: flex;
         justify-content: center;
         align-items: center;
         background-color: red;
-        height: 3vh;
-        width: 3vh;
-        border-radius: 1.5vh;
+        height: 22px;
+        width: 22px;
+        border-radius: 11px;
         position: absolute;
         top: 1vh;
         right: 0;

@@ -12,32 +12,22 @@
 
     display: grid;
     justify-content: space-between;
-    align-items: center;
-    grid-template-columns: auto auto ;
-    grid-row-gap: 5vw;
-    grid-column-gap: 5vw;
-    width: 90%;
-    
+    align-items: start;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 5vw;
+    height: fit-content;
+ 
 
     @media screen and (min-width: 540px){
-        grid-template-columns: auto auto auto;
-        grid-row-gap: 2vw;
-        grid-column-gap: 2vw;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 2vw;
 
     }
     @media screen and (min-width: 740px){
-        grid-template-columns: auto auto auto ;
+        grid-template-columns: repeat(4,1fr);
     }
-    @media screen and (min-width: 840px){
-        grid-template-columns: auto auto auto ;
-    }
-    @media screen and (min-width: 940px){
-        grid-template-columns: auto auto auto auto ;
-    }
-    @media screen and (min-width: 1040px){
-        grid-template-columns: auto auto auto auto ;
-        grid-row-gap: 3vw;
-        grid-column-gap: 3vw;
+    @media screen and (min-width: 1020px){
+        grid-template-columns: repeat(5,1fr);
     }
 }
 
