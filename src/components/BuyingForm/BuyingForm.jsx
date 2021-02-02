@@ -44,7 +44,16 @@ const BuyingForm = () => {
 
     let history = useHistory();
 
-    useEffect(() => motivationNotif() , []);
+    //Si el carrito no esta vacio entonces mando notificacion motivacional
+    //De lo contrario redirigo al usuario a la home page
+    
+    useEffect(() =>{
+        if (cart.length !== 0){
+            motivationNotif()
+        } 
+        
+        
+    }, [cart,history]);
 
 
     const motivationNotif = () => {toast('Estas a solo un paso!! Completa los datos para coordinar la entrega del producto!!', {

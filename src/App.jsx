@@ -29,22 +29,26 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './components/assets/styles/app.css'
 
 
-
 const App = () => {
 
     //State para controlar el toastify de bienvenida, una vez que entra el usuario no se mostrara si recarga la pagina
     const [ justEntered, setJustEntered ] = useState(localStorage.getItem('justEntered'));
 
-    //Inicializo funcionalidades de materialize e invoco el toast de bienvenida
+    //Inicializo funcionalidades de materialize
+    useEffect(() => {
+        M.AutoInit();
+    }, []);
+    //Invoco el toast de bienvenida solo si es la primera vez que entra a la pagina
     useEffect(() => {
 
-        M.AutoInit();
-        
-        !justEntered && toasti();
-        localStorage.setItem('justEntered', true);
-        setJustEntered(false);
+        if( justEntered === null ){
 
-    }, []);
+            toasti();
+            localStorage.setItem('justEntered', true);
+            setJustEntered(false);
+        }
+
+    }, [justEntered]);
 
     const toasti = () => {toast('Bienvenido a CoderCommerce!! Sitio realizado en ReactJS perteneciente al proyecto integrador de CoderHouse', {
         position: "top-center",

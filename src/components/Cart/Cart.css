@@ -53,6 +53,7 @@
 
 .cart-container .cart .cart-items, .cart-container-empty .cart .cart-items {
   min-height: 40vh;
+  max-height: 70vh;
   background-color: #ffffff;
   overflow-y: auto;
   overflow-x: hidden;
